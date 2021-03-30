@@ -1,0 +1,23 @@
+.container{
+	width:100vw;
+	height:100vh;
+	display: flex;
+	flex:1;
+}
+
+
+.body{
+	display: flex;
+	flex-direction: column;
+	margin-top:60px;
+	width: 100%;
+	background: rgba(220,220,220,0.4);
+}
+
+.h1{
+	width: 100%;
+	color:#FFF;
+	background-color:rgba(0,0,255,0.4);
+	font-size: 20px;
+	font-weight: bold;
+}

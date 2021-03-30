@@ -17,7 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return response()->json(User::get(), 200);
+
+        
     }
 
     /**
@@ -41,8 +42,7 @@ class UserController extends Controller
         $dataValidate = Validator::make($request->all(),[
             'name'=> 'required',
             'email'=> 'required|email',
-            'password' =>'required',
-            'c_password' => 'required|same:password'
+            'password' =>'required'
         ]);
 
         if($dataValidate->fails()){
@@ -55,8 +55,9 @@ class UserController extends Controller
         $user = User::create($allData);
 
         $resArr = [];
-        $resArr['toke'] = $user->createToken('AuthToken')->accessToken;
+        $resArr['token'] = $user->createToken('AuthToken')->accessToken;
         $resArr['name'] = $user->name;
+        $resArr['id'] = $user->id;
 
         return response()->json($resArr, 200);
     }
@@ -69,7 +70,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+
+        return response()->json($user, 200);
     }
 
     /**
@@ -108,11 +111,13 @@ class UserController extends Controller
 
     public function login(Request $request){
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+
             $user = Auth::user();
 
             $resArr = [];
-            $resArr['token'] = $user->createToken('AuthToke')->accessToken;
+            $resArr['token'] = $user->createToken('AuthToken')->accessToken;
             $resArr['name'] = $user->name;
+            $resArr['id'] = $user->id;
 
             return response()->json($resArr, 200);
         }else{
