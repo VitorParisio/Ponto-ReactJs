@@ -7,29 +7,24 @@ import axios from 'axios';
 function Home() {
 	const [users, setUsers] = useState([])
 
-	const [id] = useState(localStorage.getItem('id'));
-	
 	useEffect(()=>{ 
-		getData();
+		getUser();
 	
 	},[])
 
-	const getData = async ()=>{
-		const response = await axios.get("http://localhost:8000/api/user/"+id)
-		let data = response.data
-		setUsers(data)
-
-		return users
+	async function getUser(){
+		let response = localStorage.getItem('userData')
+		let json = JSON.parse(response)
+		setUsers(json)
 	}
 	
     return (
-
      <div className={style.container}>
     
      	<Header />
 		<SideBar />
 		<div className={style.body}>
-			<h1 className={style.h1}>Olá, {users.name}!</h1>
+			<h1 className={style.h1}>Olá, {users.name} {users.email}!</h1>
 		</div>
      </div>
     );

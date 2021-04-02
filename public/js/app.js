@@ -2218,10 +2218,6 @@ function Index() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
           exact: true,
           path: "/",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_login__WEBPACK_IMPORTED_MODULE_2__.default, {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
-          exact: true,
-          path: "/home",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
             fallback: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
               children: "Carregando pagina..."
@@ -2296,13 +2292,18 @@ function Login() {
       password = _useState4[0],
       setPassword = _useState4[1];
 
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(new Date()),
+      _useState6 = _slicedToArray(_useState5, 2),
+      date = _useState6[0],
+      setDate = _useState6[1];
+
   function login() {
     return _login.apply(this, arguments);
   }
 
   function _login() {
     _login = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-      var items, res;
+      var items, res, json;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -2327,16 +2328,17 @@ function Login() {
               return res.json();
 
             case 6:
-              res = _context.sent;
+              json = _context.sent;
+              console.log(json);
 
-              if (res.token) {
-                localStorage.setItem('id', res.id);
+              if (json.token) {
+                localStorage.setItem('userData', JSON.stringify(json));
                 history.push('/home');
               } else {
                 alert('Erro de login e/ senha!');
               }
 
-            case 8:
+            case 9:
             case "end":
               return _context.stop();
           }
@@ -2449,6 +2451,16 @@ function Register() {
       password = _useState6[0],
       setPassword = _useState6[1];
 
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState8 = _slicedToArray(_useState7, 2),
+      login = _useState8[0],
+      setLogin = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState10 = _slicedToArray(_useState9, 2),
+      error = _useState10[0],
+      setError = _useState10[1];
+
   function onRegister() {
     return _onRegister.apply(this, arguments);
   }
@@ -2463,29 +2475,56 @@ function Register() {
               items = {
                 name: name,
                 email: email,
-                password: password
+                password: password,
+                login: login
               };
-              _context2.next = 3;
+
+              if (!(items.name === "" || items.email === "" || items.password === "", items.login === "")) {
+                _context2.next = 7;
+                break;
+              }
+
+              setError("Preencha todos os campos.");
+              setInterval(function () {
+                setError("");
+              }, 3000);
+              return _context2.abrupt("return", false);
+
+            case 7:
+              if (items.email.includes("@")) {
+                _context2.next = 11;
+                break;
+              }
+
+              setError("E-mail inválido!");
+              setInterval(function () {
+                setError("");
+              }, 3000);
+              return _context2.abrupt("return", false);
+
+            case 11:
+              _context2.next = 13;
               return fetch("http://localhost:8000/api/user", {
-                method: "POST",
-                body: JSON.stringify(items),
+                method: 'POST',
                 headers: {
                   "Content-Type": "application/json",
                   "Accept": "application/json"
-                }
+                },
+                body: JSON.stringify(items)
               });
 
-            case 3:
+            case 13:
               res = _context2.sent;
-              _context2.next = 6;
+              _context2.next = 16;
               return res.json();
 
-            case 6:
+            case 16:
               res = _context2.sent;
               alert('Usuário cadastrado com sucesso!');
-              clear();
+              _context2.next = 20;
+              return clear();
 
-            case 9:
+            case 20:
             case "end":
               return _context2.stop();
           }
@@ -2513,6 +2552,10 @@ function Register() {
               return setPassword("");
 
             case 6:
+              _context.next = 8;
+              return setLogin("00:00");
+
+            case 8:
             case "end":
               return _context.stop();
           }
@@ -2541,6 +2584,7 @@ function Register() {
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
           type: "text",
+          name: "name",
           className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.input,
           value: name,
           onChange: function onChange(e) {
@@ -2553,6 +2597,7 @@ function Register() {
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
           type: "email",
+          name: "email",
           className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.input,
           value: email,
           onChange: function onChange(e) {
@@ -2565,10 +2610,24 @@ function Register() {
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
           type: "password",
+          name: "password",
           className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.input,
           value: password,
           onChange: function onChange(e) {
             setPassword(e.target.value);
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+          htmlFor: "login",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("b", {
+            children: "Hor\xE1rio de chegada:"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          type: "text",
+          name: "login",
+          className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.input,
+          value: login,
+          onChange: function onChange(e) {
+            setLogin(e.target.value);
           }
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
@@ -2577,6 +2636,11 @@ function Register() {
           className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.btn_register,
           onClick: onRegister,
           children: "Cadastrar"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.error,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          children: error
         })
       })]
     })]
@@ -7135,7 +7199,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".sEQeWe8l4lj8znMpE_UsH{\r\n\twidth:100vw;\r\n\theight:100vh;\r\n\tdisplay: flex;\r\n\tflex:1;\r\n}\r\n\r\n._1VIRNEe12MSaMgWAgTLGY_{\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tmargin-top:60px;\r\n\twidth: 100%;\r\n\tbackground: rgba(220,220,220,0.2);\r\n}\r\n\r\n.SCrKqJ76JBH8_izbfAeae{\r\n\twidth: 100%;\r\n\tcolor:#FFF;\r\n\tbackground-color:rgba(0,0,255,0.4);\r\n\tfont-size: 20px;\r\n\tfont-weight: bold;\r\n\t\r\n}\t\r\n\r\n._194LE9tnIoKZ1163BXOGQT{\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tmargin-left:10px;\r\n\tmargin-top: 10px;\r\n}\r\n._2xP1R8JGwDwHEcMfemGduw{\r\n\tpadding: 10px;\r\n\tmargin:10px 0;\r\n\tborder: none;\r\n\tfont-size: 15px;\r\n\ttransition: background-color 0.4s ease;\r\n\twidth:50%;\r\n}\r\n._2xP1R8JGwDwHEcMfemGduw:focus{\r\n\tbackground-color: rgba(0,0,255,0.1);\r\n\tcolor:#FFF;\r\n\toutline: none;\r\n}\r\n\r\n._1EqYb0azKhwfj2Tkgo4xN1{\r\n\tmargin:20px 0;\r\n\tmargin-left:10px;\r\n}\r\n\r\n._3-ew_4K609RxodQlIMgEwS{\r\n\tborder:none;\r\n\tfont-size: 15px;\r\n\tpadding:15px;\r\n\tbackground: lightgray;\r\n\ttransition: background-color 0.5s ease;\r\n\tfont-weight: bold;\r\n}\r\n\r\n._3-ew_4K609RxodQlIMgEwS:hover{\r\n\tbackground-color:rgba(0,0,255,0.2);\r\n\tcolor:#FFF;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".sEQeWe8l4lj8znMpE_UsH{\r\n\twidth:100vw;\r\n\theight:100vh;\r\n\tdisplay: flex;\r\n\tflex:1;\r\n}\r\n\r\n._1VIRNEe12MSaMgWAgTLGY_{\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tmargin-top:60px;\r\n\twidth: 100%;\r\n\tbackground: rgba(220,220,220,0.2);\r\n}\r\n\r\n.SCrKqJ76JBH8_izbfAeae{\r\n\twidth: 100%;\r\n\tcolor:#FFF;\r\n\tbackground-color:rgba(0,0,255,0.4);\r\n\tfont-size: 20px;\r\n\tfont-weight: bold;\r\n\t\r\n}\t\r\n\r\n._194LE9tnIoKZ1163BXOGQT{\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tmargin-left:10px;\r\n\tmargin-top: 10px;\r\n}\r\n._2xP1R8JGwDwHEcMfemGduw{\r\n\tpadding: 10px;\r\n\tmargin:10px 0;\r\n\tborder: none;\r\n\tfont-size: 15px;\r\n\ttransition: background-color 0.4s ease;\r\n\twidth:50%;\r\n}\r\n._2xP1R8JGwDwHEcMfemGduw:focus{\r\n\tbackground-color: rgba(0,0,255,0.1);\r\n\tcolor:#FFF;\r\n\toutline: none;\r\n}\r\n._1IfwRpGqNxNuWLdp-E8YEt{\r\n\tpadding: 10px;\r\n\tmargin:10px 0;\r\n\tborder: none;\r\n\tfont-size: 15px;\r\n\ttransition: background-color 0.4s ease;\r\n\twidth:20%;\r\n \toverflow: hidden;\r\n\ttext-overflow: ellipsis;\r\n}\r\n\r\n._1EqYb0azKhwfj2Tkgo4xN1{\r\n\tmargin:20px 0;\r\n\tmargin-left:10px;\r\n}\r\n\r\n._3-ew_4K609RxodQlIMgEwS{\r\n\tborder:none;\r\n\tfont-size: 15px;\r\n\tpadding:15px;\r\n\tbackground: lightgray;\r\n\ttransition: background-color 0.5s ease;\r\n\tfont-weight: bold;\r\n}\r\n\r\n._3-ew_4K609RxodQlIMgEwS:hover{\r\n\tbackground-color:rgba(0,0,255,0.2);\r\n\tcolor:#FFF;\r\n}\r\n\r\n._1c_c3HFN0TaHFCAMZPIQXp{\r\n\tcolor:#FFF;\r\n\tbackground:red;\r\n\tdisplay: flex;\r\n\tjustify-content: center;\r\n\r\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": "sEQeWe8l4lj8znMpE_UsH",
@@ -7143,8 +7207,10 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"h1": "SCrKqJ76JBH8_izbfAeae",
 	"inputs": "_194LE9tnIoKZ1163BXOGQT",
 	"input": "_2xP1R8JGwDwHEcMfemGduw",
+	"input__select": "_1IfwRpGqNxNuWLdp-E8YEt",
 	"btn": "_1EqYb0azKhwfj2Tkgo4xN1",
-	"btn_register": "_3-ew_4K609RxodQlIMgEwS"
+	"btn_register": "_3-ew_4K609RxodQlIMgEwS",
+	"error": "_1c_c3HFN0TaHFCAMZPIQXp"
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -10,10 +10,8 @@ function Index() {
     	<Router>
 	    	<div>
 		       <Switch>
-		       		<Route exact path="/">
-			       		<Login />	
-			       	</Route>
-			       	<Route exact path="/home">
+		       	
+			       	<Route exact path="/">
 			       			<Suspense fallback={<div>Carregando pagina...</div>}>
 			       				<Home />
 			       			</Suspense>	

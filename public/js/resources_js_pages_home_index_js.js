@@ -52,42 +52,34 @@ function Home() {
       users = _useState2[0],
       setUsers = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(localStorage.getItem('id')),
-      _useState4 = _slicedToArray(_useState3, 1),
-      id = _useState4[0];
-
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    getData();
+    getUser();
   }, []);
 
-  var getData = /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-      var response, data;
+  function getUser() {
+    return _getUser.apply(this, arguments);
+  }
+
+  function _getUser() {
+    _getUser = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var response, json;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_5___default().get("http://localhost:8000/api/user/" + id);
+              response = localStorage.getItem('userData');
+              json = JSON.parse(response);
+              setUsers(json);
 
-            case 2:
-              response = _context.sent;
-              data = response.data;
-              setUsers(data);
-              return _context.abrupt("return", users);
-
-            case 6:
+            case 3:
             case "end":
               return _context.stop();
           }
         }
       }, _callee);
     }));
-
-    return function getData() {
-      return _ref.apply(this, arguments);
-    };
-  }();
+    return _getUser.apply(this, arguments);
+  }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.container,
@@ -95,7 +87,7 @@ function Home() {
       className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.body,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("h1", {
         className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.h1,
-        children: ["Ol\xE1, ", users.name, "!"]
+        children: ["Ol\xE1, ", users.name, " ", users.email, "!"]
       })
     })]
   });

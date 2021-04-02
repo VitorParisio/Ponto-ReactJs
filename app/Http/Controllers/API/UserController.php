@@ -53,13 +53,17 @@ class UserController extends Controller
         $allData['password'] = bcrypt($allData['password']);
 
         $user = User::create($allData);
-
+        
         $resArr = [];
         $resArr['token'] = $user->createToken('AuthToken')->accessToken;
         $resArr['name'] = $user->name;
+        $resArr['email'] = $user->email;
         $resArr['id'] = $user->id;
+        $resArr['login'] = $user->login;
+        $resArr['logout'] = $user->logout;
 
         return response()->json($resArr, 200);
+    }
     }
 
     /**
@@ -117,7 +121,10 @@ class UserController extends Controller
             $resArr = [];
             $resArr['token'] = $user->createToken('AuthToken')->accessToken;
             $resArr['name'] = $user->name;
+            $resArr['email'] = $user->email;
             $resArr['id'] = $user->id;
+            $resArr['login'] = $user->login;
+            $resArr['logout'] = $user->logout;
 
             return response()->json($resArr, 200);
         }else{

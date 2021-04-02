@@ -6,6 +6,7 @@ function Login() {
 	let history = useHistory();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [date, setDate] = useState(new Date())
 
 	async function login(){
 		let items ={email, password};
@@ -19,10 +20,10 @@ function Login() {
 			body: JSON.stringify(items)
 		})
 
-		res = await res.json();
-		
-		if(res.token){
-			localStorage.setItem('id', res.id);
+		let json = await res.json();
+		console.log(json)
+		if(json.token){
+			localStorage.setItem('userData', JSON.stringify(json));
 			history.push('/home')
 		}else{
 			alert('Erro de login e/ senha!')
