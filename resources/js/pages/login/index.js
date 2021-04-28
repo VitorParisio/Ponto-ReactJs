@@ -21,7 +21,7 @@ function Login() {
 		})
 
 		let json = await res.json();
-		console.log(json)
+		
 		if(json.token){
 			localStorage.setItem('userData', JSON.stringify(json));
 			history.push('/home')

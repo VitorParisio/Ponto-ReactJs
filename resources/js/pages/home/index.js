@@ -1,30 +1,36 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, Suspense, lazy} from 'react';
 import Header from '../../components/header';
 import SideBar from '../../components/sidebar';
 import style from './style.module.css';	
-import axios from 'axios';
+const TableUsers = lazy(() => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(import("../../components/tableusers")), 3000);
+  });
+});
 
 function Home() {
-	const [users, setUsers] = useState([])
+	const [admin, setAdmin] = useState([]);
 
 	useEffect(()=>{ 
-		getUser();
+		getUserAdmin();
 	
 	},[])
 
-	async function getUser(){
-		let response = localStorage.getItem('userData')
-		let json = JSON.parse(response)
-		setUsers(json)
+	async function getUserAdmin(){
+		let response = localStorage.getItem('userData');
+		let json = JSON.parse(response);
+		setAdmin(json);
 	}
-	
+
     return (
      <div className={style.container}>
-    
-     	<Header />
+     	<Header/>
 		<SideBar />
 		<div className={style.body}>
-			<h1 className={style.h1}>Olá, {users.name} {users.email}!</h1>
+			<h1 className={style.h1}>Olá, {admin.name}!</h1>
+			<Suspense fallback={<span>Aguarde...</span>}>
+   				<TableUsers />
+			</Suspense>	
 		</div>
      </div>
     );

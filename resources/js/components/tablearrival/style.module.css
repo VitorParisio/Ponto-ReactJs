@@ -1,0 +1,21 @@
+.table{
+	width: 100%;
+}
+
+.table, th, td{
+	border:1px solid rgba(220,220,220,0.8);
+	text-align: center;
+	background-color:#FFF;
+}
+
+th{
+	background-color:rgba(0,0,255,0.4);
+	color:#FFF;
+}
+.h1{
+	width: 100%;
+	color:#FFF;
+	background-color:rgba(0,0,255,0.4);
+	font-size: 20px;
+	font-weight: bold;
+}

@@ -18,7 +18,9 @@ class UserController extends Controller
     public function index()
     {
 
-        
+        $user = User::orderBy('name')->get();
+
+        return response()->json($user, 200);
     }
 
     /**
@@ -64,7 +66,6 @@ class UserController extends Controller
 
         return response()->json($resArr, 200);
     }
-    }
 
     /**
      * Display the specified resource.
@@ -72,6 +73,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
         $user = User::find($id);

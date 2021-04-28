@@ -14,7 +14,7 @@ function SideBar() {
        					  key={key} 
        					  onClick={()=>{
        					  	if(val.title === "Home"){
-       					  		history.push('./home');
+       					  		history.push('/home');
        					  	}
        					  	if(val.title === "Cadastrar")
        					  		history.push('/register');
