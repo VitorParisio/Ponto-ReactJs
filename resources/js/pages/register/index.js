@@ -29,7 +29,7 @@ function Register() {
 			return false;
 		}
 
-		let res = await fetch("http://localhost:8000/api/user", {
+		let res = await fetch("http://10.0.0.109:8000/api/user", {
 			method:'POST',
 			headers:{
 				"Content-Type" : "application/json",

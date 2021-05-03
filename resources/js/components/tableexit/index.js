@@ -12,7 +12,7 @@ function TableExit(props) {
 	}, [])
 
 	async function getUserExit(){
-		await fetch('http://localhost:8000/api/exit/'+id)
+		await fetch('http://10.0.0.109:8000/api/exit/'+id)
 			.then(result =>result.json())
 			.then(json => setUserExit(json))
 	}

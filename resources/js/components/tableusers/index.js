@@ -1,18 +1,29 @@
 import React, {useState, useEffect} from 'react';
 import style from './style.module.css';
-import { Link } from "react-router-dom";
+import { Link, useHistory  } from "react-router-dom";
+import { FaEdit } from 'react-icons/fa';
+import { FaTrash } from 'react-icons/fa';
 
 function TableUsers() {
 	const [usersHome, setUsersHome] = useState([]);
+	const history = useHistory();
 
 	useEffect(()=>{
 		getUsersHome();
 	},[])
 
 	async function getUsersHome(){
-		await fetch('http://localhost:8000/api/user')
+		await fetch('http://10.0.0.109:8000/api/user')
 			.then(result => result.json())
 			.then(json => setUsersHome(json));
+	}
+
+	async function getDelete($id){
+		await fetch('http://10.0.0.109:8000/api/user/'+ $id,{
+			method:'DELETE'
+		})
+
+		return true
 	}
 
 	let table =  
@@ -36,8 +47,8 @@ function TableUsers() {
 					<td>{person.logout}</td>
 					<td><Link to={`arrival/${person.id}`}>Entrada</Link></td>
 					<td><Link to={`exit/${person.id}`}>Saída</Link></td>
-					<td>Editar</td>
-					<td>Excluir</td>
+					<td><a href="#"><FaEdit /></a></td>
+					<td><Link to="/home/reload" style={{border:"none"}} onClick={() => getDelete(`${person.id}`)}><FaTrash /></Link></td>
 				</tr>
 				))}
 			</tbody>

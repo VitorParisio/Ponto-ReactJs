@@ -111,8 +111,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {   
+        $user = User::find($id);
+        $user->delete();
     }
 
     public function login(Request $request){

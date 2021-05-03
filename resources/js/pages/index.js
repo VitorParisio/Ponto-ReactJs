@@ -1,5 +1,5 @@
 import React, {lazy, Suspense}  from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import Register from './register';
 import Login from './login';
 import Arrival from './arrival';
@@ -13,21 +13,22 @@ const Home = lazy(() => {
 
 function Index() {
     return (
-    	<Router>
-	    	<div>
-		       <Switch>
-		       
-			       	<Route exact path="/">
-			       			<Suspense fallback={<span>Carregando página...</span>}>
-			       				<Home />
-			       			</Suspense>	
-			       	</Route>
-			       	<Route exact path="/register" component={Register} />
-				 	<Route exact path="/arrival/:id" component={Arrival} /> 
-				 	<Route exact path="/exit/:id" component={Exit} />
-		       </Switch>		
-		     </div>  
-      	</Router>
+	    <div>	
+	    	<Router>
+			       <Switch>
+			       		<Route exact path="/" component={Login} />
+				       	<Route exact path="/home">
+				       			<Suspense fallback={<span>Carregando página...</span>}>
+				       				<Home />
+				       			</Suspense>	
+				       	</Route>
+				       	<Route exact path="/register" component={Register} />
+					 	<Route exact path="/arrival/:id" component={Arrival} /> 
+					 	<Route exact path="/exit/:id" component={Exit} />
+					 	<Redirect exact from='/home/reload' to='/home' />
+			       </Switch>		
+	      	</Router>
+	    </div> 
     );
 }
 

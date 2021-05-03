@@ -12,7 +12,7 @@ function Arrival(props) {
 	const {params} = props.match;
     return (
     	<div className={style.container}>
-	    	<Header/>
+	    	 <Header />
 			   <SideBar />
        	<div className={style.body}>
 	        <Suspense fallback={<span>Aguarde...</span>}>

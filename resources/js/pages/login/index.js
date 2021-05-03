@@ -11,7 +11,7 @@ function Login() {
 	async function login(){
 		let items ={email, password};
 
-		let res = await fetch("http://localhost:8000/api/login", {
+		let res = await fetch("http://10.0.0.109:8000/api/login", {
 			method:'POST',
 			headers:{
 				'Content-Type': 'application/json',
@@ -23,8 +23,12 @@ function Login() {
 		let json = await res.json();
 		
 		if(json.token){
-			localStorage.setItem('userData', JSON.stringify(json));
-			history.push('/home')
+			if(json.name === "Talita Delícia" || json.name === "Saymon Feio"){
+				localStorage.setItem('userData', JSON.stringify(json));
+				history.push('/home')
+			}else{
+				alert('Você não tem privilégio!');
+			}
 		}else{
 			alert('Erro de login e/ senha!')
 		}

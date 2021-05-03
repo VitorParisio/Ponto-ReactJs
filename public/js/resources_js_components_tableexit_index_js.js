@@ -64,7 +64,7 @@ function TableExit(props) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return fetch('http://localhost:8000/api/exit/' + id).then(function (result) {
+              return fetch('http://10.0.0.109:8000/api/exit/' + id).then(function (result) {
                 return result.json();
               }).then(function (json) {
                 return setUserExit(json);

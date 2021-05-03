@@ -2347,12 +2347,16 @@ var Home = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(function () 
 });
 
 function Index() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.BrowserRouter, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.BrowserRouter, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Switch, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
           exact: true,
           path: "/",
+          component: _login__WEBPACK_IMPORTED_MODULE_2__.default
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+          exact: true,
+          path: "/home",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
             fallback: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
               children: "Carregando p\xE1gina..."
@@ -2371,6 +2375,10 @@ function Index() {
           exact: true,
           path: "/exit/:id",
           component: _exit__WEBPACK_IMPORTED_MODULE_4__.default
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Redirect, {
+          exact: true,
+          from: "/home/reload",
+          to: "/home"
         })]
       })
     })
@@ -2456,7 +2464,7 @@ function Login() {
                 password: password
               };
               _context.next = 3;
-              return fetch("http://localhost:8000/api/login", {
+              return fetch("http://10.0.0.109:8000/api/login", {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -2474,8 +2482,12 @@ function Login() {
               json = _context.sent;
 
               if (json.token) {
-                localStorage.setItem('userData', JSON.stringify(json));
-                history.push('/home');
+                if (json.name === "Talita Delícia" || json.name === "Saymon Feio") {
+                  localStorage.setItem('userData', JSON.stringify(json));
+                  history.push('/home');
+                } else {
+                  alert('Você não tem privilégio!');
+                }
               } else {
                 alert('Erro de login e/ senha!');
               }
@@ -2652,7 +2664,7 @@ function Register() {
 
             case 11:
               _context2.next = 13;
-              return fetch("http://localhost:8000/api/user", {
+              return fetch("http://10.0.0.109:8000/api/user", {
                 method: 'POST',
                 headers: {
                   "Content-Type": "application/json",
