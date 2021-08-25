@@ -23,7 +23,7 @@ function Login() {
 		let json = await res.json();
 		
 		if(json.token){
-			if(json.name === "Talita Delícia" || json.name === "Saymon Feio"){
+			if(json.name === "Talita" || json.name === "Saymon"){
 				localStorage.setItem('userData', JSON.stringify(json));
 				history.push('/home')
 			}else{
