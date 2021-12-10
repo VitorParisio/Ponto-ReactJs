@@ -1,0 +1,85 @@
+.header{
+	display: flex;
+	flex:1;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	background-color:blue;
+	height: 60px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.logo{
+	font-size: 20px;	
+	margin-left: 20px;
+	color:#FFF;
+}
+
+.logo:hover{
+	color:#FFF;
+	text-decoration: none;
+}
+
+
+.user{
+	display: flex;
+	flex:1;
+	justify-content: flex-end;
+	margin-right: 10px;
+	z-index: 999;
+}
+
+.user > .item {
+	font-size: 1em;
+	display: flex;
+	flex:1;
+	justify-content: flex-end;
+	color:#FFF;
+	font-family: "Times New Roman";
+	margin-right: 20px;
+}
+
+.user > .item > a:hover {
+	text-decoration: none;
+}
+
+
+.user > .subitem {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	margin-right: 20px;
+	margin-top: 22px;
+	background: #FFF;
+}
+
+.user > .subitem > .subitem_link{
+	padding: 10px;
+	width: 100%;
+}
+
+.user > .subitem {
+	display: none;
+}
+
+.user > .item:hover .subitem{
+	display: block;
+	cursor: pointer;
+}
+
+.user > .subitem > .subitem_link:hover{
+	background: blue;
+}	
+
+.user > .subitem > .subitem_link a:hover{
+	text-decoration: none;
+	color:#FFF;
+}	
+
+
+
+
+
