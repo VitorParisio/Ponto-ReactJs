@@ -114,6 +114,8 @@ function Register() {
 		       				<input type="time" className={style.login} name="login" value={login} onChange={(e) => {setLogin(e.target.value)}}/>
 		       				ATÉ
 		       				<input type="time" className={style.logout} name="logout" value={logout} onChange={(e) => {setLogout(e.target.value)}}/>
+		       				<span>{error.login}</span>
+		       				<span>{error.logout}</span>
 				        </div>	
 			         </label>
 			         <label htmlFor="interrupt"><b>Intervalo:</b>
@@ -121,6 +123,8 @@ function Register() {
 		       				<input type="time" className={style.away} name="away" value={away} onChange={(e) => {setAway(e.target.value)}}/>
 		       				ATÉ
 		       				<input type="time" className={style.returned} name="returned" value={returned} onChange={(e) => {setReturned(e.target.value)}}/>
+		       				<span>{error.away}</span>
+		       				<span>{error.returned}</span>
 				        </div>	
 			         </label>
        			</div>
@@ -129,9 +133,11 @@ function Register() {
        				<div className={style.access}>
 		       			<label htmlFor="inlog" className={style.label_register}><b>Login:</b>
 			       			<input type="text" name="inlog" className={style.input_register} value={inlog} onChange={(e) => {setInlog(e.target.value)}} autoComplete="off" />
+			       			<span>{error.inlog}</span>
 	       				</label>
 	       				<label htmlFor="password" className={style.label_register}><b>Senha:</b>
 			       			<input type="password" name="password" className={style.input_register} value={password} onChange={(e) => {setPassword(e.target.value)}} />
+			       			<span>{error.password}</span>
 	       				</label>
 	       			</div>
 	       			<div className={style.permition}>

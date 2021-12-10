@@ -2976,6 +2976,10 @@ function Register() {
                 onChange: function onChange(e) {
                   setLogout(e.target.value);
                 }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                children: error.login
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                children: error.logout
               })]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
@@ -3000,6 +3004,10 @@ function Register() {
                 onChange: function onChange(e) {
                   setReturned(e.target.value);
                 }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                children: error.away
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                children: error.returned
               })]
             })]
           })]
@@ -3024,6 +3032,8 @@ function Register() {
                   setInlog(e.target.value);
                 },
                 autoComplete: "off"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                children: error.inlog
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
               htmlFor: "password",
@@ -3038,6 +3048,8 @@ function Register() {
                 onChange: function onChange(e) {
                   setPassword(e.target.value);
                 }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                children: error.password
               })]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {

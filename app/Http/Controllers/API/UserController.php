@@ -42,14 +42,27 @@ class UserController extends Controller
     public function store(Request $request)
     {
        $dataValidate = Validator::make($request->all(),[
-            'name'=> 'required|max:191|min:3',
+          'name'=> 'required|max:191|min:3',
             'lastname'=> 'required|max:191|min:3',
             'office'=> 'required|max:191|min:3',
             'email' => 'required|unique:users|email',
-            
+            'inlog' => 'required',
+            'away' => 'required|date',
+            'returned' => 'required|date',
+            'login' => 'required|date',
+            'logout' => 'required|date',
+            'type_access' => 'required',
+            'password' => 'required'
         ], ['lastname.required' => 'O campo sobrenome é obrigatório.',
-            'email.unique' => 'E-mail já cadastrado.']
-        );
+            'email.unique' => 'E-mail já cadastrado.',
+            'office.required' => 'O campo cargo é obrigatório.',
+            'away.required' => 'O campo intervalo é obrigatório.',
+            'returned.required' => 'O campo intervalo é obrigatório.',
+            'login.required' => 'O campo horarário é obrigatório.',
+            'logout.required' => 'O campo horarário é obrigatório.',
+            'inlog.required' => 'O campo login é obrigatório.',
+            'password.required' => 'O campo senha é obrigatório.'
+        ]);
 
         if ($dataValidate->fails()){
             return response()->json(['errors' => $dataValidate->errors()], 202);
