@@ -58,9 +58,7 @@ function Register() {
 				return success;
 			}
 			
-		});
-		
-				
+		});			
 	}
 
 	const clear = async () =>{
@@ -91,39 +89,41 @@ function Register() {
    		<div className={style.body}>
        		<div className={style.form_register}>
        			<h5 className={style.title_register}>Definições</h5>
-       			<label htmlFor="name" className={style.label_register}><b>Nome:</b>
-			    	<input type="text" name="name" className={style.input_register} value={name} onChange={(e) => {setName(e.target.value)}} autoComplete="off"/>
-			    	<span>{error.name}</span>
-		       	</label>
-		       	<label htmlFor="lastname" className={style.label_register}><b>Sobrenome:</b>
-	       			<input type="text" name="lastname" className={style.input_register} value={lastname} onChange={(e) => {setLastName(e.target.value)}} autoComplete="off"/>
-		       		<span>{error.lastname}</span>
-		       	</label>
-		       	<label htmlFor="office" className={style.label_register}><b>Cargo:</b>
-	       			<input type="text" name="office" className={style.input_register} value={office} onChange={(e) => {setOffice(e.target.value)}} autoComplete="off"/>
-	       			<span>{error.office}</span>
-		       	</label>
-		       	<label htmlFor="email" className={style.label_register}><b>E-mail:</b>
-	       			<input type="email" name="email" className={style.input_register} value={email} onChange={(e) => {setEmail(e.target.value)}} autoComplete="off"/>
-					<span>{error.email}</span>
-				</label>
+       			<div className={style.definitions}>
+	       			<label htmlFor="name" className={style.label_register}><b>Nome:</b>
+				    	<input type="text" name="name" maxLength="15" className={style.input_register} value={name} onChange={(e) => {setName(e.target.value)}} autoComplete="off"/>
+				    	<span>{error.name}</span>
+			       	</label>
+			       	<label htmlFor="lastname" className={style.label_register}><b>Sobrenome:</b>
+		       			<input type="text" name="lastname" maxLength="15" className={style.input_register} value={lastname} onChange={(e) => {setLastName(e.target.value)}} autoComplete="off"/>
+			       		<span>{error.lastname}</span>
+			       	</label>
+			       	<label htmlFor="office" className={style.label_register}><b>Cargo:</b>
+		       			<input type="text" name="office" maxLength="15" className={style.input_register} value={office} onChange={(e) => {setOffice(e.target.value)}} autoComplete="off"/>
+		       			<span>{error.office}</span>
+			       	</label>
+			       	<label htmlFor="email" className={style.label_register}><b>E-mail:</b>
+		       			<input type="email" name="email" maxLength="25" className={style.input_register} value={email} onChange={(e) => {setEmail(e.target.value)}} autoComplete="off"/>
+						<span>{error.email}</span>
+					</label>
+				</div>
    				<h5 className={style.title_register}>Jornada de trabalho</h5>
    				<div className={style.journey}>
    					<label htmlFor="schedule"><b>Horário:</b>
 	       				<div className={style.schedule}>
 		       				<input type="time" className={style.login} name="login" value={login} onChange={(e) => {setLogin(e.target.value)}}/>
+		       				<span>{error.login}</span>
 		       				ATÉ
 		       				<input type="time" className={style.logout} name="logout" value={logout} onChange={(e) => {setLogout(e.target.value)}}/>
-		       				<span>{error.login}</span>
 		       				<span>{error.logout}</span>
 				        </div>	
 			         </label>
 			         <label htmlFor="interrupt"><b>Intervalo:</b>
        					<div className={style.interrupt}>
 		       				<input type="time" className={style.away} name="away" value={away} onChange={(e) => {setAway(e.target.value)}}/>
+		       				<span>{error.away}</span>
 		       				ATÉ
 		       				<input type="time" className={style.returned} name="returned" value={returned} onChange={(e) => {setReturned(e.target.value)}}/>
-		       				<span>{error.away}</span>
 		       				<span>{error.returned}</span>
 				        </div>	
 			         </label>
@@ -132,7 +132,7 @@ function Register() {
        			<div className={style.type_access}>
        				<div className={style.access}>
 		       			<label htmlFor="inlog" className={style.label_register}><b>Login:</b>
-			       			<input type="text" name="inlog" className={style.input_register} value={inlog} onChange={(e) => {setInlog(e.target.value)}} autoComplete="off" />
+			       			<input type="text" name="inlog" maxLength="15" className={style.input_register} value={inlog} onChange={(e) => {setInlog(e.target.value)}} autoComplete="off" />
 			       			<span>{error.inlog}</span>
 	       				</label>
 	       				<label htmlFor="password" className={style.label_register}><b>Senha:</b>
@@ -147,9 +147,9 @@ function Register() {
 	       				</label>
 	       			</div>
        			</div>
-	       		<div className={style.btns}>
-      				<input type="button" value="Salvar" className="btn btn-primary" onClick={onRegister} />
-      				<input className="btn btn-secondary" onClick={clear} type="reset" value="Cancel" />
+       			<div className={style.btns}>
+	  				<input type="button" value="Salvar" className="btn btn-primary" onClick={onRegister} />
+	  				<input className="btn btn-secondary" onClick={clear} type="reset" value="Cancel" />
       			</div>
        		</div>
 	     </div>}

@@ -2122,7 +2122,7 @@ function Header(props) {
             className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.item_link,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__.FaUserCircle, {
               size: 20
-            }), " ", admin.name]
+            }), admin.name, " ", admin.lastname]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.subitem,
@@ -2183,11 +2183,11 @@ function SideBar() {
         children: _sidebardata__WEBPACK_IMPORTED_MODULE_2__.SideBarData.map(function (val, key) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
             onClick: function onClick() {
-              if (val.title === "Página inicial") {
+              if (val.title === "Colaboradores") {
                 history.push('/');
               }
 
-              if (val.title === "Cadastrar") history.push('/register');
+              if (val.title === "Adicionar") history.push('/register');
             },
             className: _style_module_css__WEBPACK_IMPORTED_MODULE_1__.default.row,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -2227,13 +2227,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var SideBarData = [{
-  title: 'Página inicial',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__.FaHome, {
+  title: 'Colaboradores',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__.FaUsers, {
     size: 20
   })
 }, {
-  title: 'Cadastrar',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__.FaUsers, {
+  title: 'Adicionar',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__.FaUserPlus, {
     size: 20
   })
 }];
@@ -2881,73 +2881,80 @@ function Register() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h5", {
           className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.title_register,
           children: "Defini\xE7\xF5es"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
-          htmlFor: "name",
-          className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.label_register,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
-            children: "Nome:"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
-            type: "text",
-            name: "name",
-            className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.input_register,
-            value: name,
-            onChange: function onChange(e) {
-              setName(e.target.value);
-            },
-            autoComplete: "off"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-            children: error.name
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
-          htmlFor: "lastname",
-          className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.label_register,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
-            children: "Sobrenome:"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
-            type: "text",
-            name: "lastname",
-            className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.input_register,
-            value: lastname,
-            onChange: function onChange(e) {
-              setLastName(e.target.value);
-            },
-            autoComplete: "off"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-            children: error.lastname
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
-          htmlFor: "office",
-          className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.label_register,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
-            children: "Cargo:"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
-            type: "text",
-            name: "office",
-            className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.input_register,
-            value: office,
-            onChange: function onChange(e) {
-              setOffice(e.target.value);
-            },
-            autoComplete: "off"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-            children: error.office
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
-          htmlFor: "email",
-          className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.label_register,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
-            children: "E-mail:"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
-            type: "email",
-            name: "email",
-            className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.input_register,
-            value: email,
-            onChange: function onChange(e) {
-              setEmail(e.target.value);
-            },
-            autoComplete: "off"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-            children: error.email
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.definitions,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
+            htmlFor: "name",
+            className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.label_register,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
+              children: "Nome:"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+              type: "text",
+              name: "name",
+              maxLength: "15",
+              className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.input_register,
+              value: name,
+              onChange: function onChange(e) {
+                setName(e.target.value);
+              },
+              autoComplete: "off"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+              children: error.name
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
+            htmlFor: "lastname",
+            className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.label_register,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
+              children: "Sobrenome:"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+              type: "text",
+              name: "lastname",
+              maxLength: "15",
+              className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.input_register,
+              value: lastname,
+              onChange: function onChange(e) {
+                setLastName(e.target.value);
+              },
+              autoComplete: "off"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+              children: error.lastname
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
+            htmlFor: "office",
+            className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.label_register,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
+              children: "Cargo:"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+              type: "text",
+              name: "office",
+              maxLength: "15",
+              className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.input_register,
+              value: office,
+              onChange: function onChange(e) {
+                setOffice(e.target.value);
+              },
+              autoComplete: "off"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+              children: error.office
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
+            htmlFor: "email",
+            className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.label_register,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("b", {
+              children: "E-mail:"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+              type: "email",
+              name: "email",
+              maxLength: "25",
+              className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.input_register,
+              value: email,
+              onChange: function onChange(e) {
+                setEmail(e.target.value);
+              },
+              autoComplete: "off"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+              children: error.email
+            })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h5", {
           className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.title_register,
@@ -2968,6 +2975,8 @@ function Register() {
                 onChange: function onChange(e) {
                   setLogin(e.target.value);
                 }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                children: error.login
               }), "AT\xC9", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
                 type: "time",
                 className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.logout,
@@ -2976,8 +2985,6 @@ function Register() {
                 onChange: function onChange(e) {
                   setLogout(e.target.value);
                 }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-                children: error.login
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
                 children: error.logout
               })]
@@ -2996,6 +3003,8 @@ function Register() {
                 onChange: function onChange(e) {
                   setAway(e.target.value);
                 }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                children: error.away
               }), "AT\xC9", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
                 type: "time",
                 className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.returned,
@@ -3004,8 +3013,6 @@ function Register() {
                 onChange: function onChange(e) {
                   setReturned(e.target.value);
                 }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-                children: error.away
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
                 children: error.returned
               })]
@@ -3026,6 +3033,7 @@ function Register() {
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
                 type: "text",
                 name: "inlog",
+                maxLength: "15",
                 className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.input_register,
                 value: inlog,
                 onChange: function onChange(e) {
@@ -7565,7 +7573,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._3EdbXYQ3Sw31I6afAz8CPI{\n\tdisplay: flex;\n\tflex:1;\n\tflex-wrap: wrap;\n\tjustify-content: space-between;\n\talign-items: center;\n\tposition: fixed;\n\tbackground-color:blue;\n\theight: 60px;\n\twidth: 100%;\n\tbox-sizing: border-box;\n}\n\n._167n5jOzWmaO3fRuHbje_j{\n\tfont-size: 20px;\t\n\tmargin-left: 20px;\n\tcolor:#FFF;\n}\n\n._167n5jOzWmaO3fRuHbje_j:hover{\n\tcolor:#FFF;\n\ttext-decoration: none;\n}\n\n\n.YNeRJfOdMk_b5Z6zHiNek{\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: flex-end;\n\tmargin-right: 10px;\n\tz-index: 999;\n}\n\n.YNeRJfOdMk_b5Z6zHiNek > ._1MB1aMpQnkipnrT3q8Zqe7 {\n\tfont-size: 1em;\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: flex-end;\n\tcolor:#FFF;\n\tfont-family: \"Times New Roman\";\n\tmargin-right: 20px;\n}\n\n.YNeRJfOdMk_b5Z6zHiNek > ._1MB1aMpQnkipnrT3q8Zqe7 > a:hover {\n\ttext-decoration: none;\n}\n\n\n.YNeRJfOdMk_b5Z6zHiNek > ._3rnInsI-aj4Bps4-O5JjlI {\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\tposition: absolute;\n\tmargin-right: 20px;\n\tmargin-top: 22px;\n\tbackground: #FFF;\n}\n\n.YNeRJfOdMk_b5Z6zHiNek > ._3rnInsI-aj4Bps4-O5JjlI > ._1ADa8Tuqj4KTOuEvpK3Q_S{\n\tpadding: 10px;\n\twidth: 100%;\n}\n\n.YNeRJfOdMk_b5Z6zHiNek > ._3rnInsI-aj4Bps4-O5JjlI {\n\tdisplay: none;\n}\n\n.YNeRJfOdMk_b5Z6zHiNek > ._1MB1aMpQnkipnrT3q8Zqe7:hover ._3rnInsI-aj4Bps4-O5JjlI{\n\tdisplay: block;\n\tcursor: pointer;\n}\n\n.YNeRJfOdMk_b5Z6zHiNek > ._3rnInsI-aj4Bps4-O5JjlI > ._1ADa8Tuqj4KTOuEvpK3Q_S:hover{\n\tbackground: blue;\n}\t\n\n.YNeRJfOdMk_b5Z6zHiNek > ._3rnInsI-aj4Bps4-O5JjlI > ._1ADa8Tuqj4KTOuEvpK3Q_S a:hover{\n\ttext-decoration: none;\n\tcolor:#FFF;\n}\t\n\n\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "._3EdbXYQ3Sw31I6afAz8CPI{\n\tdisplay: flex;\n\tflex:1;\n\tflex-wrap: wrap;\n\tjustify-content: space-between;\n\talign-items: center;\n\tposition: fixed;\n\tbackground-color:blue;\n\theight: 60px;\n\twidth: 100%;\n\tbox-sizing: border-box;\n\tz-index: 999;\n}\n\n._167n5jOzWmaO3fRuHbje_j{\n\tfont-size: 20px;\t\n\tmargin-left: 20px;\n\tcolor:#FFF;\n}\n\n._167n5jOzWmaO3fRuHbje_j:hover{\n\tcolor:#FFF;\n\ttext-decoration: none;\n}\n\n\n.YNeRJfOdMk_b5Z6zHiNek{\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: flex-end;\n\tmargin-right: 10px;\n\tz-index: 999;\n}\n\n.YNeRJfOdMk_b5Z6zHiNek > ._1MB1aMpQnkipnrT3q8Zqe7 {\n\tfont-size: 1em;\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: flex-end;\n\tcolor:#FFF;\n\tfont-family: \"Times New Roman\";\n\tmargin-right: 20px;\n}\n\n.YNeRJfOdMk_b5Z6zHiNek > ._1MB1aMpQnkipnrT3q8Zqe7 > a:hover {\n\ttext-decoration: none;\n}\n\n\n.YNeRJfOdMk_b5Z6zHiNek > ._3rnInsI-aj4Bps4-O5JjlI {\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\tposition: absolute;\n\tmargin-right: 20px;\n\tmargin-top: 22px;\n\tbackground: #FFF;\n}\n\n.YNeRJfOdMk_b5Z6zHiNek > ._3rnInsI-aj4Bps4-O5JjlI > ._1ADa8Tuqj4KTOuEvpK3Q_S{\n\tpadding: 10px;\n\twidth: 100%;\n}\n\n.YNeRJfOdMk_b5Z6zHiNek > ._3rnInsI-aj4Bps4-O5JjlI {\n\tdisplay: none;\n}\n\n.YNeRJfOdMk_b5Z6zHiNek > ._1MB1aMpQnkipnrT3q8Zqe7:hover ._3rnInsI-aj4Bps4-O5JjlI{\n\tdisplay: block;\n\tcursor: pointer;\n}\n\n.YNeRJfOdMk_b5Z6zHiNek > ._3rnInsI-aj4Bps4-O5JjlI > ._1ADa8Tuqj4KTOuEvpK3Q_S:hover{\n\tbackground: blue;\n}\t\n\n.YNeRJfOdMk_b5Z6zHiNek > ._3rnInsI-aj4Bps4-O5JjlI > ._1ADa8Tuqj4KTOuEvpK3Q_S a:hover{\n\ttext-decoration: none;\n\tcolor:#FFF;\n}\t\n\n\n\n\n\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"header": "_3EdbXYQ3Sw31I6afAz8CPI",
@@ -7714,22 +7722,19 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".sEQeWe8l4lj8znMpE_UsH{\n\twidth:100vw;\n\theight:100%;\n\tdisplay: flex;\n\tflex:1;\n}\n\n._1VIRNEe12MSaMgWAgTLGY_{\n\tdisplay: flex;\n\tflex:1;\n\tflex-direction: column;\n\twidth: 85%;\n\tposition: absolute;\n\tbackground: rgba(220,220,220,0.8);\n\tright: 0;\t\n\tz-index: -1;\n}\n\n.YdHJyqlhx4Cma0qacyfU-{\n\theight: auto;\n\twidth: 75%;\n\tbackground: #FFF;\n\tmargin: 70px auto;\n\tpadding: 10px;\n}\n\n._2X2m911Rr5Ns7u0knLG6p2{\n\twidth: 100%;\n\tbackground: lightgray;\n\tfont-family: sans-serif;\n\tfont-weight: bold;\n\tpadding: 10px;\n}\n\n._2hjS2GZubvGfj4aeyDLKTe{\n\tmargin-top: 10px;\n\tpadding-left: 5px;\n\tdisplay: flex;\n\tflex-direction: column;\n}\n\n._1k-IOBAvJI8_vM3-yBVcTU{\n\tfont-size: 15px;\n\twidth: 40%;\n\tborder: 1px solid lightgray;\n\n}\n\n._1k-IOBAvJI8_vM3-yBVcTU:focus{\n\toutline: none;\n}\n\n.ELcron4734Va01sXYYDMf{\n\tmargin-top: 10px;\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-around;\n\ttext-align: center;\n\tflex-direction: row;\n\twidth:100%;\n}\n\n._1_QBujL_3psLykHpMm8bnu, ._1bXapmgaFk0MrTJ0maIG5N{\n\tdisplay: flex;\n\tflex-direction: row;\n\tborder:1px solid lightgray;\n}\n\n._1fcQXCFAe_bZS1hJU64tGn, ._1pzO_qowBB9f2ktFp6GyZh, ._2JtqfwmMcjnI53I80V4VnB, ._2k9H4pysG8BwgVu4yO8bt-{\n\tborder:none;\t\n}\n\n._9xCGWibKBUX3DrGtFsuXY{\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-between;\n\twidth: 100%;\n\tborder-bottom: 1px solid lightgray;\n\tmargin-bottom: 10px;\n}\n\n.fPfMIrR-PLztz9KQ3JoNs > label > input{\n\twidth: 100%;\n}\n\n._3wY8P3w15KEn9hZNJ7uqmo > label {\n\tdisplay: inline-block;\n}\n\n._3zV-nAkfrCZz5MA0_v7TqT{\n\tdisplay: flex;\n\tflex: 1;\n\tjustify-content: flex-end;\n\ttext-align: center;\n}\n\n._3zV-nAkfrCZz5MA0_v7TqT > input{\n\tmargin-left: 10px;\n}\n\n._2fPUbZYBRusSxjOXrcPbnD{\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 85%;\n\theight: calc(100% - 60px);\n\tmargin-top: 60px;\n\tposition: absolute;\n\topacity: 0.4;\n\tright: 0;\n}\n\n.m6bDQJ8sePTEBImyzPD6o {\n  display: inline-block;\n  width: 80px;\n  height: 80px;\n}\n\n.m6bDQJ8sePTEBImyzPD6o:after {\n  content: \" \";\n  display: block;\n  width: 64px;\n  height: 64px;\n  margin: 8px;\n  border-radius: 50%;\n  border: 6px solid #000;\n  border-color: #000 transparent #000 transparent;\n  -webkit-animation: m6bDQJ8sePTEBImyzPD6o 1.2s linear infinite;\n          animation: m6bDQJ8sePTEBImyzPD6o 1.2s linear infinite;\n}\n\n._3SGb6WqfdHdwJ8AGjDpEfx{\n\tdisplay: flex;\n\twidth: calc(100% - 15%);\n\tposition: fixed;\n\tright: 0;\n\tfont-weight: bold;\n\tmargin-top: 60px;\n\tfont-size: 20px;\n\tjustify-content: center;\n\tcolor: #385d7a;\n  \tbackground-color: #e2f0fb;\n  \tborder-color: #d6e9f9;\n}\n\n._1c_c3HFN0TaHFCAMZPIQXp{\n\tcolor: #761b18;\n  \tbackground-color: #f9d6d5;\n  \tborder-color: #f7c6c5;\n\tdisplay: flex;\n\twidth: calc(100% - 15%);\n\tposition: fixed;\n\tright: 0;\n\tfont-weight: bold;\n\tmargin-top: 60px;\n\tfont-size: 20px;\n\tjustify-content: center;\n\tfont-family: sans-serif;\n}\n\n@-webkit-keyframes m6bDQJ8sePTEBImyzPD6o {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes m6bDQJ8sePTEBImyzPD6o {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* ----- RESET ---- */\n*{\n\tmargin:0;\n\tpadding: 0;\n\toutline: none;\n\tlist-style: none;\n\tbox-sizing: border-box;\n}\n/* ---------------- */\n\n.sEQeWe8l4lj8znMpE_UsH{\n\twidth:100%;\n\theight:100vh;\n\tdisplay: flex;\n}\n\n._1VIRNEe12MSaMgWAgTLGY_{\n\tflex:1;\n\tposition: absolute;\n\tbackground: rgba(220,220,220,0.8);\n\twidth: calc(100% - 15%);\n\tright: 0;\n}\n\n._1VIRNEe12MSaMgWAgTLGY_ > .YdHJyqlhx4Cma0qacyfU-{\n\tbackground: #FFF;\n\tmax-width: 800px;\n\tmargin: 60px auto;\n\t\n}\n\n.YdHJyqlhx4Cma0qacyfU- > .s0YjI5GDfnOV0M6YJBJh-{\n\tdisplay: flex;\n\tflex-direction: column;\n}\n.YdHJyqlhx4Cma0qacyfU- > ._2X2m911Rr5Ns7u0knLG6p2{\n\twidth: 100%;\n\tbackground: lightgray;\n\tfont-family: sans-serif;\n\tfont-weight: bold;\n\tpadding: 10px;\n}\n\n.YdHJyqlhx4Cma0qacyfU- >  .s0YjI5GDfnOV0M6YJBJh- > ._2hjS2GZubvGfj4aeyDLKTe{\n\tmargin-top: 10px;\n\tpadding-left: 5px;\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\tflex-direction: column;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > .s0YjI5GDfnOV0M6YJBJh- > ._2hjS2GZubvGfj4aeyDLKTe > ._1k-IOBAvJI8_vM3-yBVcTU{\n\tfont-size: 15px;\n\twidth: 40%;\n\tborder: 1px solid lightgray;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > .ELcron4734Va01sXYYDMf{\n\tmargin-top: 10px;\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-around;\n\ttext-align: center;\n\tflex-direction: row;\n\twidth:100%;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > .ELcron4734Va01sXYYDMf > ._1_QBujL_3psLykHpMm8bnu, ._1bXapmgaFk0MrTJ0maIG5N{\n\tdisplay: flex;\n\tflex-direction: row;\n\tborder:1px solid lightgray;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > ._9xCGWibKBUX3DrGtFsuXY{\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-between;\n\twidth: 100%;\n\tborder-bottom: 1px solid lightgray;\n\tmargin-bottom: 10px;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > ._9xCGWibKBUX3DrGtFsuXY > .fPfMIrR-PLztz9KQ3JoNs > label{\n\tmargin-left:5px;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > ._9xCGWibKBUX3DrGtFsuXY > .fPfMIrR-PLztz9KQ3JoNs > label > input{\n\twidth: 100%;\n\tborder: 1px solid lightgray;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > ._9xCGWibKBUX3DrGtFsuXY > ._3wY8P3w15KEn9hZNJ7uqmo > label {\n\tdisplay: inline-block;\n}\n\n._3zV-nAkfrCZz5MA0_v7TqT{\n\tfloat:right;\n}\n\n._3zV-nAkfrCZz5MA0_v7TqT > input{\n\tmargin-left: 10px;\n}\n\n._2fPUbZYBRusSxjOXrcPbnD{\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 85%;\n\theight: calc(100% - 60px);\n\tmargin-top: 60px;\n\tposition: absolute;\n\topacity: 0.4;\n\tright: 0;\n}\n\n.m6bDQJ8sePTEBImyzPD6o {\n  display: inline-block;\n  width: 80px;\n  height: 80px;\n}\n\n.m6bDQJ8sePTEBImyzPD6o:after {\n  content: \" \";\n  display: block;\n  width: 64px;\n  height: 64px;\n  margin: 8px;\n  border-radius: 50%;\n  border: 6px solid #000;\n  border-color: #000 transparent #000 transparent;\n  -webkit-animation: m6bDQJ8sePTEBImyzPD6o 1.2s linear infinite;\n          animation: m6bDQJ8sePTEBImyzPD6o 1.2s linear infinite;\n}\n\n._3SGb6WqfdHdwJ8AGjDpEfx{\n\tdisplay: flex;\n\twidth: calc(100% - 15%);\n\tposition: fixed;\n\tright: 0;\n\tfont-weight: bold;\n\tmargin-top: 60px;\n\tfont-size: 20px;\n\tjustify-content: center;\n\tcolor: #385d7a;\n  \tbackground-color: #e2f0fb;\n  \tborder-color: #d6e9f9;\n}\n\n._1c_c3HFN0TaHFCAMZPIQXp{\n\tcolor: #761b18;\n  \tbackground-color: #f9d6d5;\n  \tborder-color: #f7c6c5;\n\tdisplay: flex;\n\twidth: calc(100% - 15%);\n\tposition: fixed;\n\tright: 0;\n\tfont-weight: bold;\n\tmargin-top: 60px;\n\tfont-size: 20px;\n\tjustify-content: center;\n\tfont-family: sans-serif;\n}\n\n._1fcQXCFAe_bZS1hJU64tGn, ._1pzO_qowBB9f2ktFp6GyZh, ._2JtqfwmMcjnI53I80V4VnB, ._2k9H4pysG8BwgVu4yO8bt-{\n\tborder:none;\t\n}\n\n@-webkit-keyframes m6bDQJ8sePTEBImyzPD6o {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes m6bDQJ8sePTEBImyzPD6o {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": "sEQeWe8l4lj8znMpE_UsH",
 	"body": "_1VIRNEe12MSaMgWAgTLGY_",
 	"form_register": "YdHJyqlhx4Cma0qacyfU-",
+	"definitions": "s0YjI5GDfnOV0M6YJBJh-",
 	"title_register": "_2X2m911Rr5Ns7u0knLG6p2",
 	"label_register": "_2hjS2GZubvGfj4aeyDLKTe",
 	"input_register": "_1k-IOBAvJI8_vM3-yBVcTU",
 	"journey": "ELcron4734Va01sXYYDMf",
 	"schedule": "_1_QBujL_3psLykHpMm8bnu",
 	"interrupt": "_1bXapmgaFk0MrTJ0maIG5N",
-	"login": "_1fcQXCFAe_bZS1hJU64tGn",
-	"logout": "_1pzO_qowBB9f2ktFp6GyZh",
-	"away": "_2JtqfwmMcjnI53I80V4VnB",
-	"returned": "_2k9H4pysG8BwgVu4yO8bt-",
 	"type_access": "_9xCGWibKBUX3DrGtFsuXY",
 	"access": "fPfMIrR-PLztz9KQ3JoNs",
 	"permition": "_3wY8P3w15KEn9hZNJ7uqmo",
@@ -7737,7 +7742,11 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"spinner": "_2fPUbZYBRusSxjOXrcPbnD",
 	"lds_dual_ring": "m6bDQJ8sePTEBImyzPD6o",
 	"success": "_3SGb6WqfdHdwJ8AGjDpEfx",
-	"error": "_1c_c3HFN0TaHFCAMZPIQXp"
+	"error": "_1c_c3HFN0TaHFCAMZPIQXp",
+	"login": "_1fcQXCFAe_bZS1hJU64tGn",
+	"logout": "_1pzO_qowBB9f2ktFp6GyZh",
+	"away": "_2JtqfwmMcjnI53I80V4VnB",
+	"returned": "_2k9H4pysG8BwgVu4yO8bt-"
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

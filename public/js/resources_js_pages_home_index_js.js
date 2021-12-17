@@ -66,7 +66,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._3tIlZoqn_lDn5haMDL4bkS{\n\twidth:100vw;\n\theight:100%;\n\tdisplay: flex;\n\tflex:1;\n}\n\n._2lF70zOOJpJzHBv_dYcBO6{\n\tdisplay: flex;\n\tflex:1;\n\theight: 100%;\n\tflex-direction: column;\n\tmargin-top:60px;\n\twidth: 85%;\n\tbackground: rgba(220,220,220,0.8);\n\tposition: absolute;\n\tright: 0;\n\tz-index: -1;\n}\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "._3tIlZoqn_lDn5haMDL4bkS{\n\twidth:100vw;\n\theight:100vh;\n\tdisplay: flex;\n\tlist-style: none;\n}\n\n._2lF70zOOJpJzHBv_dYcBO6{\n\tflex:1;\n\theight: 100%;\n\twidth: calc(100% - 15%);\n\tbackground: rgba(220,220,220,0.8);\n\tposition: absolute;\n\tright: 0;\t\n}\n\n\n\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": "_3tIlZoqn_lDn5haMDL4bkS",

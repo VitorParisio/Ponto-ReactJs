@@ -18,7 +18,7 @@ class UserController extends Controller
     public function index()
     {
 
-        $user = User::orderBy('name')->get();
+        $user = User::orderBy('name')->paginate(6);
 
         return response()->json($user, 200);
     }
@@ -42,26 +42,31 @@ class UserController extends Controller
     public function store(Request $request)
     {
        $dataValidate = Validator::make($request->all(),[
-          'name'=> 'required|max:191|min:3',
-            'lastname'=> 'required|max:191|min:3',
-            'office'=> 'required|max:191|min:3',
+            'name'=> 'required|max:191',
+            'lastname'=> 'required|max:191',
+            'office'=> 'required|max:191',
             'email' => 'required|unique:users|email',
             'inlog' => 'required',
-            'away' => 'required|date',
-            'returned' => 'required|date',
-            'login' => 'required|date',
-            'logout' => 'required|date',
+            'away' => 'required',
+            'returned' => 'required',
+            'login' => 'required',
+            'logout' => 'required',
             'type_access' => 'required',
             'password' => 'required'
-        ], ['lastname.required' => 'O campo sobrenome é obrigatório.',
+        ], ['lastname.required' => 'Campo não preenchido.',
+            'lastname.max' => 'Excedeu o máximo de letras.',
+            'name.max' => 'Excedeu o máximo de letras.',
+            'office.max' => 'Excedeu o máximo de letras.',
             'email.unique' => 'E-mail já cadastrado.',
-            'office.required' => 'O campo cargo é obrigatório.',
-            'away.required' => 'O campo intervalo é obrigatório.',
-            'returned.required' => 'O campo intervalo é obrigatório.',
-            'login.required' => 'O campo horarário é obrigatório.',
-            'logout.required' => 'O campo horarário é obrigatório.',
-            'inlog.required' => 'O campo login é obrigatório.',
-            'password.required' => 'O campo senha é obrigatório.'
+            'office.required' => 'Campo não preenchido.',
+            'away.required' => 'Campo não preenchido.',
+            'returned.required' => 'Campo não preenchido.',
+            'login.required' => 'Campo não preenchido.',
+            'logout.required' => 'Campo não preenchido.',
+            'inlog.required' => 'Campo não preenchido.',
+            'password.required' => 'Campo não preenchido.',
+            'name.required' => 'Campo não preenchido.',
+            'email.required' => 'Campo não preenchido.',
         ]);
 
         if ($dataValidate->fails()){
@@ -70,6 +75,11 @@ class UserController extends Controller
 
             $allData = $request->all();
             $allData['password'] = bcrypt($allData['password']);
+            $allData['name'] = ucfirst($allData['name']);
+            $allData['lastname'] = ucfirst($allData['lastname']);
+            $allData['office'] = ucfirst($allData['office']);
+            $allData['email'] = strtolower($allData['email']);
+
 
             User::create($allData);
 
@@ -132,8 +142,10 @@ class UserController extends Controller
             $user = Auth::user();
 
             $resArr = [];
+            
             $resArr['token'] = $user->createToken('AuthToken')->accessToken;
             $resArr['name'] = $user->name;
+            $resArr['lastname'] = $user->lastname;
             $resArr['email'] = $user->email;
             $resArr['id'] = $user->id;
             $resArr['login'] = $user->login;

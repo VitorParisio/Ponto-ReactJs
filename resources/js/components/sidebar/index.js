@@ -15,10 +15,10 @@ function SideBar() {
      					<li 
      					  key={key} 
      					  onClick={()=>{
-     					  	if(val.title === "Página inicial"){
+     					  	if(val.title === "Colaboradores"){
      					  		history.push('/');
      					  	}
-     					  	if(val.title === "Cadastrar")
+     					  	if(val.title === "Adicionar")
      					  		history.push('/register');
      					  }}
      					  className={style.row}

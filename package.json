@@ -28,6 +28,7 @@
     },
     "dependencies": {
         "react-icons": "^4.2.0",
+        "react-js-pagination": "^3.0.3",
         "react-router-dom": "^5.2.0",
         "yarn": "^1.22.10"
     }

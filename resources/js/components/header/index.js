@@ -31,7 +31,7 @@ function Header(props) {
             		<Link to="/" className={style.logo}>QR-Smart</Link>
           		</div>	
 		      	<section className={style.user}>
-		      		<div className={style.item}><a href="#" className={style.item_link}><FaUserCircle size={20}/> {admin.name}</a></div>
+		      		<div className={style.item}><a href="#" className={style.item_link}><FaUserCircle size={20}/>{admin.name} {admin.lastname}</a></div>
 	      			<div className={style.subitem}>
 		      			<div className={style.subitem_link}><a href="#">Minha conta</a></div>
 		      			<div className={style.subitem_link}><Link to="/reload" onClick={getLogout}>Sair</Link></div>
