@@ -46,8 +46,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-
 function TableUsers() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -163,55 +161,51 @@ function TableUsers() {
             className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.user,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.items_user,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-                className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.item,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__.FaUserAlt, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.item1,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__.FaUserAlt, {
                   size: 40
-                }), " ", person.name, " ", person.lastname]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.item
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.item,
-                children: person.office
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.item,
-                children: person.email
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.item,
-                children: person.login
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.item,
-                children: person.logout
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.item,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-                  to: "arrival/".concat(person.id),
-                  children: "Entrada"
                 })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.item,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-                  to: "exit/".concat(person.id),
-                  children: "Sa\xEDda"
-                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.item2,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h4", {
+                  children: [person.name, " ", person.lastname]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h6", {
+                  children: person.office
+                })]
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.actions,
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                children: "teste"
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
+                  to: "account/".concat(person.id),
+                  style: {
+                    border: "none",
+                    color: "green"
+                  },
+                  title: "Informa\xE7\xF5es",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__.FaInfoCircle, {
+                    size: 20
+                  })
+                })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                children: "teste"
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__.FaRegEdit, {
+                  size: 20
+                })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.item,
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
                   to: "/home/reload",
                   style: {
-                    border: "none"
+                    border: "none",
+                    color: "red"
                   },
                   onClick: function onClick() {
                     return getDelete("".concat(person.id));
                   },
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__.FaTrashAlt, {})
+                  title: "Excluir",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__.FaTrashAlt, {
+                    size: 20
+                  })
                 })
               })]
             })]
@@ -331,7 +325,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "::-moz-placeholder {\n\tcolor: #000;\n\tfont-family: serif;\n\tfont-style: italic;\n}\n\n:-ms-input-placeholder {\n\tcolor: #000;\n\tfont-family: serif;\n\tfont-style: italic;\n}\n\n::placeholder {\n\tcolor: #000;\n\tfont-family: serif;\n\tfont-style: italic;\n}\n\n.i4aYuJWumZtM1allQL1JY{\n\tmargin-top:60px;\n}\n\n._1xcXL_fz7J8pPfccF2KjA7{\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-between;\n\talign-items: center;\n\tbackground: #FFF;\n\tpadding: 5px;\n}\n\n._1xcXL_fz7J8pPfccF2KjA7 > h3{\n\tfont-weight: bold;\n\tfont-family: sans-serif;\n}\n\n._1xcXL_fz7J8pPfccF2KjA7 > input{\n\theight: 40px;\n\toutline: none;\n\tborder:none;\n\tborder-radius: 5px;\n\tbackground: rgba(169,169,169, 0.4);\n}\n\n._2Kxjw7YOow2GgQeWIce3wg{\n\tposition: absolute;\n\tright:0;\n\tmargin: 10px;\n}\n\n._1VqkOMx0TGIofprgKJHJB{\n\tdisplay: flex;\n\tmax-width: 800px;\n\tjustify-content: space-between;\n\talign-items: center;\n\tflex-wrap: wrap;\n\tmargin: 0 auto;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1{\n\tflex:0 1 200px;\n\tmargin:15px;\n\tflex-wrap: wrap;\n\tbackground: #FFF;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6{\n\t\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > .derqqtWY-3IfuxVw_UBIp{\n\tdisplay: flex;\n\tjustify-content: space-around;\n\tborder-top:1px solid lightgray;\n}\n\n._5wDSLIjkmUipwGUq1Mmuc{\n\tmargin-top: 60px;\n\tbackground: #FFF;\n\twidth: 100%;\n}\n\n._5wDSLIjkmUipwGUq1Mmuc > h4{\n\tfont-family: serif;\n\tpadding:10px;\n\tfont-style: italic;\n\tfont-weight: bold;\n}\n\n._1Lje36f-ZEH4wzsvkTWZx1{\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n}\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "::-moz-placeholder {\n\tcolor: #000;\n\tfont-family: serif;\n\tfont-style: italic;\n}\n\n:-ms-input-placeholder {\n\tcolor: #000;\n\tfont-family: serif;\n\tfont-style: italic;\n}\n\n::placeholder {\n\tcolor: #000;\n\tfont-family: serif;\n\tfont-style: italic;\n}\n\n.i4aYuJWumZtM1allQL1JY{\n\tmargin-top:60px;\n}\n\n._1xcXL_fz7J8pPfccF2KjA7{\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-between;\n\talign-items: center;\n\tbackground: #FFF;\n\tpadding: 5px;\n\tbox-shadow: 3px 2px 2px 4px rgba(0,0,0,0.3);\n}\n\n._1xcXL_fz7J8pPfccF2KjA7 > h3{\n\tfont-weight: bold;\n\tfont-family: sans-serif;\n}\n\n._1xcXL_fz7J8pPfccF2KjA7 > input{\n\theight: 40px;\n\toutline: none;\n\tborder:none;\n\tborder-radius: 5px;\n\tbackground: rgba(169,169,169, 0.4);\n}\n\n._2Kxjw7YOow2GgQeWIce3wg{\n\tposition: absolute;\n\tright:0;\n\tmargin: 10px;\n}\n\n._1VqkOMx0TGIofprgKJHJB{\n\tdisplay: flex;\n\tmax-width: 800px;\n\tjustify-content: space-between;\n\talign-items: center;\n\tflex-wrap: wrap;\n\tmargin: 10px auto;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1{\n\tflex:0 1 200px;\n\tmargin:15px;\n\tflex-wrap: wrap;\n\tbackground: #FFF;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6{\n\t\n\tpadding: 20px;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6 > ._1ask7wLRZAKsa00ePhHGaV{\n\ttext-align: center;\n\tmargin-bottom: 10px;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6 > ._2_l1bEfpqxJrk-l1WadSjp {\n\ttext-align: center;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6 > ._2_l1bEfpqxJrk-l1WadSjp > h4{\n\tfont-family: sans-serif;\n\tfont-weight: bold;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6 > ._2_l1bEfpqxJrk-l1WadSjp > h6{\n\tfont-family: sans-serif;\n\tcolor:gray;\n\tfont-style: italic;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > .derqqtWY-3IfuxVw_UBIp{\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-around;\n\tborder-top:1px solid lightgray;\n\tpadding: 5px;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > .derqqtWY-3IfuxVw_UBIp > .p0q6Q7u56WQhNdTf6OdXc{\n\tcolor:#000;\n}\n\n._5wDSLIjkmUipwGUq1Mmuc{\n\tmargin-top: 60px;\n\tbackground: #FFF;\n\twidth: 100%;\n}\n\n._5wDSLIjkmUipwGUq1Mmuc > h4{\n\tfont-family: serif;\n\tpadding:10px;\n\tfont-style: italic;\n\tfont-weight: bold;\n}\n\n._1Lje36f-ZEH4wzsvkTWZx1{\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n}\n\n\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"list": "i4aYuJWumZtM1allQL1JY",
@@ -340,7 +334,10 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"users": "_1VqkOMx0TGIofprgKJHJB",
 	"user": "_2B1z6lzcZf7v1WGSg3g6A1",
 	"items_user": "_1ocOFNS7y1tlPpkadcw6N6",
+	"item1": "_1ask7wLRZAKsa00ePhHGaV",
+	"item2": "_2_l1bEfpqxJrk-l1WadSjp",
 	"actions": "derqqtWY-3IfuxVw_UBIp",
+	"link": "p0q6Q7u56WQhNdTf6OdXc",
 	"nouser": "_5wDSLIjkmUipwGUq1Mmuc",
 	"pagination": "_1Lje36f-ZEH4wzsvkTWZx1"
 };

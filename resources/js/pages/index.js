@@ -2,6 +2,7 @@ import React, {lazy, Suspense}  from 'react';
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import Register from './register';
 import Login from './login';
+import Account from './account';
 import Arrival from './arrival';
 import Exit from './exit';
 
@@ -25,6 +26,7 @@ function Index() {
 				       	<Route exact path="/register" component={Register} />
 					 	<Route exact path="/arrival/:id" component={Arrival} /> 
 					 	<Route exact path="/exit/:id" component={Exit} />
+					 	<Route exact path="/account/:id" component={Account} />
 					 	<Redirect exact from='/home/reload' to='/home' />
 			       </Switch>		
 	      	</Router>

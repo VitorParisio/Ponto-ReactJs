@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import style from './style.module.css';
 import { Link, useHistory  } from "react-router-dom";
-import { FaUserAlt } from 'react-icons/fa';
-import { FaTrashAlt } from 'react-icons/fa';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, 
+		 FaInfoCircle, 
+		 FaTrashAlt, 
+		 FaUserAlt, 
+		 FaRegEdit } from 'react-icons/fa';
 import Pagination from "react-js-pagination";
 
 function TableUsers() {
@@ -14,7 +16,6 @@ function TableUsers() {
 	const [noUser, setNoUser]		     = useState("");
 
 	const history = useHistory();
-	
 	
 	useEffect(()=>{
 		getUsersHome();
@@ -38,9 +39,7 @@ function TableUsers() {
 					setPerPage(json.per_page);
 					setTotal(json.total);
 				}
-			});
-
-			
+			});	
 	}
 
 	async function getDelete($id)
@@ -63,23 +62,21 @@ function TableUsers() {
 					<span className={style.icon_search}><FaSearch /></span>				
 				</section>  
 				<section className={style.users}>
-					
 						{data.map(person =>(
 						<div className={style.user} key={person.id}>
 							<div className={style.items_user}>
-								<div className={style.item}><FaUserAlt size={40} /> {person.name} {person.lastname}</div>
-								<div className={style.item}></div>
-								<div className={style.item}>{person.office}</div>
-								<div className={style.item}>{person.email}</div>
-								<div className={style.item}>{person.login}</div>
-								<div className={style.item}>{person.logout}</div>
-								<div className={style.item}><Link to={`arrival/${person.id}`}>Entrada</Link></div>
-								<div className={style.item}><Link to={`exit/${person.id}`}>Saída</Link></div>
+								<div className={style.item1}>
+									<FaUserAlt size={40} />
+								</div>
+								<div className={style.item2}>
+									<h4>{person.name} {person.lastname}</h4>
+									<h6>{person.office}</h6>
+								</div>
 							</div>
 							<div className={style.actions}>
-								<div>teste</div>
-								<div>teste</div>
-								<div className={style.item}><Link to="/home/reload" style={{border:"none"}} onClick={() => getDelete(`${person.id}`)}><FaTrashAlt /></Link></div>
+								<div><Link to={`account/${person.id}`} style={{border:"none", color:"green"}} title="Informações"><FaInfoCircle size={20}/></Link></div>
+								<div><FaRegEdit size={20}/></div>
+								<div><Link to="/home/reload" style={{border:"none" , color:"red"}} onClick={() => getDelete(`${person.id}`)} title="Excluir"><FaTrashAlt size={20}/></Link></div>
 							</div>
 						</div>
 					))}
@@ -95,7 +92,7 @@ function TableUsers() {
 			        />
 		      </section>
 			</div>
-		)
+		);
 	}
 
     return (

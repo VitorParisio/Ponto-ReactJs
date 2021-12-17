@@ -15,6 +15,7 @@
 	align-items: center;
 	background: #FFF;
 	padding: 5px;
+	box-shadow: 3px 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .title > h3{
@@ -42,7 +43,7 @@
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-	margin: 0 auto;
+	margin: 10px auto;
 }
 
 .users > .user{
@@ -54,12 +55,39 @@
 
 .users > .user > .items_user{
 	
+	padding: 20px;
+}
+
+.users > .user > .items_user > .item1{
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.users > .user > .items_user > .item2 {
+	text-align: center;
+}
+
+.users > .user > .items_user > .item2 > h4{
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+.users > .user > .items_user > .item2 > h6{
+	font-family: sans-serif;
+	color:gray;
+	font-style: italic;
 }
 
 .users > .user > .actions{
 	display: flex;
+	flex:1;
 	justify-content: space-around;
 	border-top:1px solid lightgray;
+	padding: 5px;
+}
+
+.users > .user > .actions > .link{
+	color:#000;
 }
 
 .nouser{

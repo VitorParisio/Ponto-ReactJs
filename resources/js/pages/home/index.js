@@ -2,6 +2,7 @@ import React, {useState, useEffect, Suspense, lazy} from 'react';
 import Header from '../../components/header';
 import SideBar from '../../components/sidebar';
 import style from './style.module.css';	
+
 const TableUsers = lazy(() => {
   return new Promise(resolve => {
     setTimeout(() => resolve(import("../../components/tableusers")), 3000);

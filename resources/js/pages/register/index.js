@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import Header from '../../components/header';
 import SideBar from '../../components/sidebar';
 import style from './style.module.css';
-import axios from 'axios';
 import { FaRegCaretSquareRight } from 'react-icons/fa';
 
 function Register() {

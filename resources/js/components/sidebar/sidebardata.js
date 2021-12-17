@@ -1,6 +1,5 @@
 import React from 'react';
-import { FaUsers } from 'react-icons/fa';
-import { FaUserPlus } from 'react-icons/fa';
+import { FaUsers, FaPlus } from 'react-icons/fa';
 
 export const SideBarData = [
 	{
@@ -9,6 +8,6 @@ export const SideBarData = [
 	},
 	{
 		title:'Adicionar',
-		icon:<FaUserPlus size={20}/>,
+		icon:<FaPlus size={20}/>,
 	},
 ]

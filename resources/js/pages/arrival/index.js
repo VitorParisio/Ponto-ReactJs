@@ -18,7 +18,7 @@ function Arrival(props) {
        	<div className={style.body}>
 	        <Suspense fallback={<span>Aguarde...</span>}>
    			    <TableArrival params = {params}/>
-			     </Suspense>	
+			   </Suspense>	
 	      </div>
       </div>
     );

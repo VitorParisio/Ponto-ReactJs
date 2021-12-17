@@ -97,8 +97,10 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-
-        return response()->json($user, 200);
+        $account_data = User::select('users.id','users.name')
+            ->where('users.id', $user->id)
+            ->get();
+        return response()->json($account_data, 200);
     }
 
     /**
