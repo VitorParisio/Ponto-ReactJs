@@ -78,12 +78,13 @@ class UserController extends Controller
             $allData['name'] = ucfirst($allData['name']);
             $allData['lastname'] = ucfirst($allData['lastname']);
             $allData['office'] = ucfirst($allData['office']);
+            $allData['inlog'] = strtolower($allData['inlog']);
             $allData['email'] = strtolower($allData['email']);
 
 
             User::create($allData);
 
-            return response()->json(['success' => 'Colaborador cadastrado com sucesso!'], 200);
+            return response()->json(['success' => 'Colaborador adicionado com sucesso!'], 200);
         }
     }
 

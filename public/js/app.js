@@ -2681,6 +2681,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/header */ "./resources/js/components/header/index.js");
 /* harmony import */ var _components_sidebar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/sidebar */ "./resources/js/components/sidebar/index.js");
 /* harmony import */ var _style_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.module.css */ "./resources/js/pages/register/style.module.css");
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -2771,12 +2772,12 @@ function Register() {
       loading = _useState24[0],
       setLoading = _useState24[1];
 
-  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState26 = _slicedToArray(_useState25, 2),
       message = _useState26[0],
       setMessage = _useState26[1];
 
-  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("Colaborador adicionado com sucesso!"),
       _useState28 = _slicedToArray(_useState27, 2),
       success = _useState28[0],
       setSuccess = _useState28[1];
@@ -2791,11 +2792,11 @@ function Register() {
   }
 
   function _onRegister() {
-    _onRegister = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+    _onRegister = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
       var items;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
         while (1) {
-          switch (_context2.prev = _context2.next) {
+          switch (_context3.prev = _context3.next) {
             case 0:
               setLoading(true);
               items = {
@@ -2811,7 +2812,7 @@ function Register() {
                 type_access: type_access,
                 inlog: inlog
               };
-              _context2.next = 4;
+              _context3.next = 4;
               return fetch("http://localhost:8000/api/user", {
                 method: 'POST',
                 headers: {
@@ -2831,10 +2832,6 @@ function Register() {
                   setMessage(true);
                   setError([]);
                   setSuccess(json.success);
-                  setTimeout(function () {
-                    setSuccess("");
-                    setMessage(false);
-                  }, 5000);
                   clear();
                   return success;
                 }
@@ -2842,68 +2839,28 @@ function Register() {
 
             case 4:
             case "end":
-              return _context2.stop();
+              return _context3.stop();
           }
         }
-      }, _callee2);
+      }, _callee3);
     }));
     return _onRegister.apply(this, arguments);
   }
 
-  var clear = /*#__PURE__*/function () {
+  var close = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return setName("");
+              return setSuccess("");
 
             case 2:
               _context.next = 4;
-              return setLastName("");
+              return setMessage(false);
 
             case 4:
-              _context.next = 6;
-              return setEmail("");
-
-            case 6:
-              _context.next = 8;
-              return setPassword("");
-
-            case 8:
-              _context.next = 10;
-              return setLogin("");
-
-            case 10:
-              _context.next = 12;
-              return setLogout("");
-
-            case 12:
-              _context.next = 14;
-              return setReturned("");
-
-            case 14:
-              _context.next = 16;
-              return setAway("");
-
-            case 16:
-              _context.next = 18;
-              return setTypeAccess(0);
-
-            case 18:
-              _context.next = 20;
-              return setOffice("");
-
-            case 20:
-              _context.next = 22;
-              return setInlog("");
-
-            case 22:
-              _context.next = 24;
-              return setLoading(false);
-
-            case 24:
             case "end":
               return _context.stop();
           }
@@ -2911,26 +2868,109 @@ function Register() {
       }, _callee);
     }));
 
-    return function clear() {
+    return function close() {
       return _ref.apply(this, arguments);
+    };
+  }();
+
+  var clear = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return setName("");
+
+            case 2:
+              _context2.next = 4;
+              return setLastName("");
+
+            case 4:
+              _context2.next = 6;
+              return setEmail("");
+
+            case 6:
+              _context2.next = 8;
+              return setPassword("");
+
+            case 8:
+              _context2.next = 10;
+              return setLogin("");
+
+            case 10:
+              _context2.next = 12;
+              return setLogout("");
+
+            case 12:
+              _context2.next = 14;
+              return setReturned("");
+
+            case 14:
+              _context2.next = 16;
+              return setAway("");
+
+            case 16:
+              _context2.next = 18;
+              return setTypeAccess(0);
+
+            case 18:
+              _context2.next = 20;
+              return setOffice("");
+
+            case 20:
+              _context2.next = 22;
+              return setInlog("");
+
+            case 22:
+              _context2.next = 24;
+              return setLoading(false);
+
+            case 24:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function clear() {
+      return _ref2.apply(this, arguments);
     };
   }();
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.container,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_header__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_sidebar__WEBPACK_IMPORTED_MODULE_3__.default, {}), message ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.success,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-        children: success
-      })
-    }) : '', loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_header__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_sidebar__WEBPACK_IMPORTED_MODULE_3__.default, {}), loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.spinner,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.lds_dual_ring
       })
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.body,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      children: [message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.pop_up
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.success,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
+            children: success
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h4", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__.FaGrinAlt, {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+            className: "btn btn-success",
+            onClick: close,
+            children: "Ok"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.title,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h3", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__.FaAngleRight, {
+            size: 15
+          }), " Adicionar"]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.form_register,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h5", {
           className: _style_module_css__WEBPACK_IMPORTED_MODULE_4__.default.title_register,
@@ -3160,7 +3200,7 @@ function Register() {
             value: "Cancel"
           })]
         })]
-      })
+      })]
     })]
   });
 }
@@ -7804,11 +7844,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* ----- RESET ---- */\n*{\n\tmargin:0;\n\tpadding: 0;\n\toutline: none;\n\tlist-style: none;\n\tbox-sizing: border-box;\n}\n/* ---------------- */\n\n.sEQeWe8l4lj8znMpE_UsH{\n\twidth:100%;\n\theight:100vh;\n\tdisplay: flex;\n}\n\n._1VIRNEe12MSaMgWAgTLGY_{\n\tflex:1;\n\tposition: absolute;\n\tbackground: rgba(220,220,220,0.8);\n\twidth: calc(100% - 15%);\n\tright: 0;\n}\n\n._1VIRNEe12MSaMgWAgTLGY_ > .YdHJyqlhx4Cma0qacyfU-{\n\tbackground: #FFF;\n\twidth: 100%;\n\tmargin: 60px auto;\n\t\n}\n\n.YdHJyqlhx4Cma0qacyfU- > .s0YjI5GDfnOV0M6YJBJh-{\n\tdisplay: flex;\n\tflex-direction: column;\n}\n.YdHJyqlhx4Cma0qacyfU- > ._2X2m911Rr5Ns7u0knLG6p2{\n\twidth: 100%;\n\tbackground: lightgray;\n\tfont-family: sans-serif;\n\tfont-weight: bold;\n\tpadding: 10px;\n}\n\n.YdHJyqlhx4Cma0qacyfU- >  .s0YjI5GDfnOV0M6YJBJh- > ._2hjS2GZubvGfj4aeyDLKTe{\n\tmargin-top: 10px;\n\tpadding-left: 5px;\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\tflex-direction: column;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > .s0YjI5GDfnOV0M6YJBJh- > ._2hjS2GZubvGfj4aeyDLKTe > ._1k-IOBAvJI8_vM3-yBVcTU{\n\tfont-size: 15px;\n\twidth: 40%;\n\tborder: 1px solid lightgray;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > .ELcron4734Va01sXYYDMf{\n\tmargin-top: 10px;\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-around;\n\ttext-align: center;\n\tflex-direction: row;\n\twidth:100%;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > .ELcron4734Va01sXYYDMf > ._1_QBujL_3psLykHpMm8bnu, ._1bXapmgaFk0MrTJ0maIG5N{\n\tdisplay: flex;\n\tflex-direction: row;\n\tborder:1px solid lightgray;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > ._9xCGWibKBUX3DrGtFsuXY{\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-between;\n\twidth: 100%;\n\tborder-bottom: 1px solid lightgray;\n\tmargin-bottom: 10px;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > ._9xCGWibKBUX3DrGtFsuXY > .fPfMIrR-PLztz9KQ3JoNs > label{\n\tmargin-left:5px;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > ._9xCGWibKBUX3DrGtFsuXY > .fPfMIrR-PLztz9KQ3JoNs > label > input{\n\twidth: 100%;\n\tborder: 1px solid lightgray;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > ._9xCGWibKBUX3DrGtFsuXY > ._3wY8P3w15KEn9hZNJ7uqmo > label {\n\tdisplay: inline-block;\n}\n\n._3zV-nAkfrCZz5MA0_v7TqT{\n\tfloat:right;\n}\n\n._3zV-nAkfrCZz5MA0_v7TqT > input{\n\tmargin-left: 10px;\n}\n\n._2fPUbZYBRusSxjOXrcPbnD{\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 85%;\n\theight: calc(100% - 60px);\n\tmargin-top: 60px;\n\tposition: absolute;\n\topacity: 0.4;\n\tright: 0;\n}\n\n.m6bDQJ8sePTEBImyzPD6o {\n  display: inline-block;\n  width: 80px;\n  height: 80px;\n}\n\n.m6bDQJ8sePTEBImyzPD6o:after {\n  content: \" \";\n  display: block;\n  width: 64px;\n  height: 64px;\n  margin: 8px;\n  border-radius: 50%;\n  border: 6px solid #000;\n  border-color: #000 transparent #000 transparent;\n  -webkit-animation: m6bDQJ8sePTEBImyzPD6o 1.2s linear infinite;\n          animation: m6bDQJ8sePTEBImyzPD6o 1.2s linear infinite;\n}\n\n._3SGb6WqfdHdwJ8AGjDpEfx{\n\tdisplay: flex;\n\twidth: calc(100% - 15%);\n\tposition: fixed;\n\tright: 0;\n\tfont-weight: bold;\n\tmargin-top: 60px;\n\tfont-size: 20px;\n\tjustify-content: center;\n\tcolor: #385d7a;\n  \tbackground-color: #e2f0fb;\n  \tborder-color: #d6e9f9;\n}\n\n._1c_c3HFN0TaHFCAMZPIQXp{\n\tcolor: #761b18;\n  \tbackground-color: #f9d6d5;\n  \tborder-color: #f7c6c5;\n\tdisplay: flex;\n\twidth: calc(100% - 15%);\n\tposition: fixed;\n\tright: 0;\n\tfont-weight: bold;\n\tmargin-top: 60px;\n\tfont-size: 20px;\n\tjustify-content: center;\n\tfont-family: sans-serif;\n}\n\n._1fcQXCFAe_bZS1hJU64tGn, ._1pzO_qowBB9f2ktFp6GyZh, ._2JtqfwmMcjnI53I80V4VnB, ._2k9H4pysG8BwgVu4yO8bt-{\n\tborder:none;\t\n}\n\n@-webkit-keyframes m6bDQJ8sePTEBImyzPD6o {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes m6bDQJ8sePTEBImyzPD6o {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* ----- RESET ---- */\n*{\n\tmargin:0;\n\tpadding: 0;\n\toutline: none;\n\tlist-style: none;\n\tbox-sizing: border-box;\n}\n/* ---------------- */\n\n.sEQeWe8l4lj8znMpE_UsH{\n\twidth:100%;\n\theight:100vh;\n\tdisplay: flex;\n}\n\n._1VIRNEe12MSaMgWAgTLGY_{\n\tflex:1;\n\tposition: absolute;\n\tbackground: rgba(220,220,220,0.8);\n\twidth: calc(100% - 15%);\n\tright: 0;\n}\n\n._1VIRNEe12MSaMgWAgTLGY_ > ._2BEFUsBqHLzD-1JS-ZxPkU{\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-between;\n\talign-items: center;\n\tbackground: #FFF;\n\tpadding: 5px;\n\tmargin-top:60px;\n\tbox-shadow: 3px 1px 4px 2px rgba(0,0,0,0.3);\n}\n\n._1VIRNEe12MSaMgWAgTLGY_ > ._2BEFUsBqHLzD-1JS-ZxPkU > h3{\n\tfont-weight: bold;\n\tfont-family: sans-serif;\n}\n\n._1VIRNEe12MSaMgWAgTLGY_ > .YdHJyqlhx4Cma0qacyfU-{\n\tbackground: #FFF;\n\twidth: 800px;\n\tmargin: 15px auto;\n\t\n}\n\n.YdHJyqlhx4Cma0qacyfU- > .s0YjI5GDfnOV0M6YJBJh-{\n\tdisplay: flex;\n\tflex-direction: column;\n}\n.YdHJyqlhx4Cma0qacyfU- > ._2X2m911Rr5Ns7u0knLG6p2{\n\twidth: 100%;\n\tbackground: lightgray;\n\tfont-family: sans-serif;\n\tfont-weight: bold;\n\tpadding: 10px;\n}\n\n.YdHJyqlhx4Cma0qacyfU- >  .s0YjI5GDfnOV0M6YJBJh- > ._2hjS2GZubvGfj4aeyDLKTe{\n\tmargin-top: 10px;\n\tpadding-left: 5px;\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\tflex-direction: column;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > .s0YjI5GDfnOV0M6YJBJh- > ._2hjS2GZubvGfj4aeyDLKTe > ._1k-IOBAvJI8_vM3-yBVcTU{\n\tfont-size: 15px;\n\twidth: 40%;\n\tborder: 1px solid lightgray;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > .ELcron4734Va01sXYYDMf{\n\tmargin-top: 10px;\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-around;\n\ttext-align: center;\n\tflex-direction: row;\n\twidth:100%;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > .ELcron4734Va01sXYYDMf > ._1_QBujL_3psLykHpMm8bnu, ._1bXapmgaFk0MrTJ0maIG5N{\n\tdisplay: flex;\n\tflex-direction: row;\n\tborder:1px solid lightgray;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > ._9xCGWibKBUX3DrGtFsuXY{\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-between;\n\twidth: 100%;\n\tborder-bottom: 1px solid lightgray;\n\tmargin-bottom: 10px;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > ._9xCGWibKBUX3DrGtFsuXY > .fPfMIrR-PLztz9KQ3JoNs > label{\n\tmargin-left:5px;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > ._9xCGWibKBUX3DrGtFsuXY > .fPfMIrR-PLztz9KQ3JoNs > label > input{\n\twidth: 100%;\n\tborder: 1px solid lightgray;\n}\n\n.YdHJyqlhx4Cma0qacyfU- > ._9xCGWibKBUX3DrGtFsuXY > ._3wY8P3w15KEn9hZNJ7uqmo > label {\n\tdisplay: inline-block;\n}\n\n._3zV-nAkfrCZz5MA0_v7TqT{\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: flex-end;\n\talign-items: center;\n\tpadding: 15px;\n}\n\n._3zV-nAkfrCZz5MA0_v7TqT > input{\n\tmargin-left: 10px;\n}\n\n._2fPUbZYBRusSxjOXrcPbnD{\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 85%;\n\theight: calc(100% - 60px);\n\tmargin-top: 60px;\n\tposition: absolute;\n\topacity: 0.4;\n\tright: 0;\n}\n\n.m6bDQJ8sePTEBImyzPD6o {\n  display: inline-block;\n  width: 80px;\n  height: 80px;\n}\n\n.m6bDQJ8sePTEBImyzPD6o:after {\n  content: \" \";\n  display: block;\n  width: 64px;\n  height: 64px;\n  margin: 8px;\n  border-radius: 50%;\n  border: 6px solid #000;\n  border-color: #000 transparent #000 transparent;\n  -webkit-animation: m6bDQJ8sePTEBImyzPD6o 1.2s linear infinite;\n          animation: m6bDQJ8sePTEBImyzPD6o 1.2s linear infinite;\n}\n\n._2yVQNlwwmQBJzirlit0Pfr{\n\twidth: 100%;\n\theight: calc(100% - 60px);\n\topacity: 0.5;\n\tposition: absolute;\n\tcolor: #385d7a;\n\tbackground-color: gray;\n  \tbottom: 0;\n  \tright: 0;\n}\n\n._3SGb6WqfdHdwJ8AGjDpEfx{\n\tdisplay: flex;\n\tflex:1;\n\tborder-radius: 5px;\n\tflex-direction: column;\n\tbackground: #FFF;\n\tjustify-content: center;\n\talign-items: center;\n\tmax-width: 500px;\n\theight: 300px;\n\tposition: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    margin: 100px auto;\n    color:green;\n}\n\n._3SGb6WqfdHdwJ8AGjDpEfx > h3{\n\tfont-size: 30px;\n\tfont-family: serif;\n\tfont-style:italic;\n}\n\n._1fcQXCFAe_bZS1hJU64tGn, ._1pzO_qowBB9f2ktFp6GyZh, ._2JtqfwmMcjnI53I80V4VnB, ._2k9H4pysG8BwgVu4yO8bt-{\n\tborder:none;\t\n}\n\n@-webkit-keyframes m6bDQJ8sePTEBImyzPD6o {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes m6bDQJ8sePTEBImyzPD6o {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": "sEQeWe8l4lj8znMpE_UsH",
 	"body": "_1VIRNEe12MSaMgWAgTLGY_",
+	"title": "_2BEFUsBqHLzD-1JS-ZxPkU",
 	"form_register": "YdHJyqlhx4Cma0qacyfU-",
 	"definitions": "s0YjI5GDfnOV0M6YJBJh-",
 	"title_register": "_2X2m911Rr5Ns7u0knLG6p2",
@@ -7823,8 +7864,8 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"btns": "_3zV-nAkfrCZz5MA0_v7TqT",
 	"spinner": "_2fPUbZYBRusSxjOXrcPbnD",
 	"lds_dual_ring": "m6bDQJ8sePTEBImyzPD6o",
+	"pop_up": "_2yVQNlwwmQBJzirlit0Pfr",
 	"success": "_3SGb6WqfdHdwJ8AGjDpEfx",
-	"error": "_1c_c3HFN0TaHFCAMZPIQXp",
 	"login": "_1fcQXCFAe_bZS1hJU64tGn",
 	"logout": "_1pzO_qowBB9f2ktFp6GyZh",
 	"away": "_2JtqfwmMcjnI53I80V4VnB",

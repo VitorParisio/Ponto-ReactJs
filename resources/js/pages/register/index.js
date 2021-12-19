@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Header from '../../components/header';
 import SideBar from '../../components/sidebar';
 import style from './style.module.css';
-import { FaRegCaretSquareRight } from 'react-icons/fa';
+import { FaRegCaretSquareRight, FaGrinAlt, FaAngleRight } from 'react-icons/fa';
 
 function Register() {
 	const [name, setName] 	           = useState("");
@@ -17,8 +17,8 @@ function Register() {
 	const [type_access, setTypeAccess] = useState(0);
 	const [inlog, setInlog]            = useState("");
 	const [loading, setLoading]        = useState(false);
-	const [message, setMessage] 	   = useState();
-	const [success, setSuccess] 	   = useState("");
+	const [message, setMessage] 	   = useState(false);
+	const [success, setSuccess] 	   = useState("Colaborador adicionado com sucesso!");
 	const [error, setError] 	  	   = useState([]);
 	
 	async function onRegister(){
@@ -42,16 +42,13 @@ function Register() {
 			if (json.hasOwnProperty('errors')){
 				setError(json.errors);
 				setLoading(false);
+				
 				return error;
 			} else {
 				setLoading(false);
 				setMessage(true);
 				setError([]);
 				setSuccess(json.success);
-				setTimeout(()=>{
-					setSuccess("");
-					setMessage(false);
-				}, 5000);
 
 				clear();
 				return success;
@@ -59,6 +56,12 @@ function Register() {
 			
 		});			
 	}
+
+	const close = async () =>{
+		await setSuccess("");
+		await setMessage(false);
+	}
+
 
 	const clear = async () =>{
 		await setName("");
@@ -79,13 +82,21 @@ function Register() {
        <div className={style.container}>
    		<Header />
    		<SideBar />
-   		{ message ? <div className={style.success}>
-  						<span>{success}</span>
-      				</div> : ''}
    		{ loading  ? <div className={style.spinner}>
        					<div className={style.lds_dual_ring}></div>
        				</div> : 
    		<div className={style.body}>
+   			{ message && <div>
+	   						<div className={style.pop_up}></div>
+	      					<div className={style.success}>
+	      						<h3>{success}</h3>
+	      						<h4><FaGrinAlt /></h4>
+	      						<button className="btn btn-success" onClick={close}>Ok</button>
+	      					</div>
+      					</div>}
+      		<div className={style.title}>
+				<h3><FaAngleRight size={15}/> Adicionar</h3>				
+			</div>  
        		<div className={style.form_register}>
        			<h5 className={style.title_register}>Definições</h5>
        			<div className={style.definitions}>
@@ -147,8 +158,8 @@ function Register() {
 	       			</div>
        			</div>
        			<div className={style.btns}>
-	  				<input type="button" value="Salvar" className="btn btn-primary" onClick={onRegister} />
-	  				<input className="btn btn-secondary" onClick={clear} type="reset" value="Cancel" />
+  					<input type="button" value="Salvar" className="btn btn-primary" onClick={onRegister} />
+  					<input className="btn btn-secondary" onClick={clear} type="reset" value="Cancel" />
       			</div>
        		</div>
 	     </div>}

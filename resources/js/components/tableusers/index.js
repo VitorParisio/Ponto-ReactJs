@@ -4,8 +4,9 @@ import { Link, useHistory  } from "react-router-dom";
 import { FaSearch, 
 		 FaInfoCircle, 
 		 FaTrashAlt, 
-		 FaUserAlt, 
-		 FaRegEdit } from 'react-icons/fa';
+		 FaUserCircle, 
+		 FaRegEdit,
+		 FaAngleRight } from 'react-icons/fa';
 import Pagination from "react-js-pagination";
 
 function TableUsers() {
@@ -54,23 +55,21 @@ function TableUsers() {
 
 	function listUsers() 
 	{	
-		return (
-			<div className={style.list}>
-				<section className={style.title}>
-					<h3>Colaboradores</h3>
-					<input type="text" placeholder="Colaborador(a)..." />
-					<span className={style.icon_search}><FaSearch /></span>				
-				</section>  
-				<section className={style.users}>
+		let no_user = <div className={style.nouser}>
+							<h4>Base de dados sem registro(s)!</h4>
+							<button className="btn btn-success"><Link to="/register" style={{color:"#FFF", fontFamily:"Arial", fontWeight: "bold", fontSize: "15px"}}>+ Adicionar</Link></button>
+					  </div>
+
+		let user_data = <section className={style.users}>
 						{data.map(person =>(
 						<div className={style.user} key={person.id}>
 							<div className={style.items_user}>
 								<div className={style.item1}>
-									<FaUserAlt size={40} />
+									<FaUserCircle size={40} />
 								</div>
 								<div className={style.item2}>
 									<h4>{person.name} {person.lastname}</h4>
-									<h6>{person.office}</h6>
+									<h5>{person.office}</h5>
 								</div>
 							</div>
 							<div className={style.actions}>
@@ -81,6 +80,15 @@ function TableUsers() {
 						</div>
 					))}
 				</section>
+
+		return (
+			<div className={style.list}>
+				<section className={style.title}>
+					<h3><FaAngleRight size={15}/> Colaboradores</h3>
+					<input type="text" placeholder="Colaborador(a)..." />
+					<span className={style.icon_search}><FaSearch /></span>				
+				</section>  
+				{noUser === 0 ? no_user : user_data}
 				<section className={style.pagination}>
 			        <Pagination
 			          activePage = {current_page}
@@ -97,7 +105,7 @@ function TableUsers() {
 
     return (
         <div>
-	       {noUser === 0 ? <div className={style.nouser}><h4>Não há registro(s) de colaborador(es).</h4></div> : listUsers()}
+	       {listUsers()}
         </div>
     );
 }
