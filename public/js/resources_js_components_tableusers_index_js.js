@@ -223,16 +223,19 @@ function TableUsers() {
       className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.list,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section", {
         className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.title,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h3", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_7__.FaAngleRight, {
-            size: 15
-          }), " Colaboradores"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-          type: "text",
-          placeholder: "Colaborador(a)..."
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.icon_search,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_7__.FaSearch, {})
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+            className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.title_text,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_7__.FaPlayCircle, {}), " Colaboradores"]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            type: "text",
+            placeholder: "Colaborador(a)..."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+            className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.icon_search,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_7__.FaSearch, {})
+          })]
         })]
       }), noUser === 0 ? no_user : user_data, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("section", {
         className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.pagination,
@@ -343,11 +346,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "::-moz-placeholder {\n\tcolor: #000;\n\tfont-family: serif;\n\tfont-style: italic;\n}\n\n:-ms-input-placeholder {\n\tcolor: #000;\n\tfont-family: serif;\n\tfont-style: italic;\n}\n\n::placeholder {\n\tcolor: #000;\n\tfont-family: serif;\n\tfont-style: italic;\n}\n\n.i4aYuJWumZtM1allQL1JY{\n}\n\n._1xcXL_fz7J8pPfccF2KjA7{\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-between;\n\talign-items: center;\n\tbackground: #FFF;\n\tpadding: 5px;\n\tbox-shadow: 3px 1px 4px 2px rgba(0,0,0,0.3);\n}\n\n._1xcXL_fz7J8pPfccF2KjA7 > h3{\n\tfont-weight: bold;\n\tfont-family: sans-serif;\n}\n\n._1xcXL_fz7J8pPfccF2KjA7 > input{\n\theight: 40px;\n\toutline: none;\n\tborder:none;\n\tborder-radius: 5px;\n\tbackground: rgba(169,169,169, 0.4);\n}\n\n._2Kxjw7YOow2GgQeWIce3wg{\n\tposition: absolute;\n\tright:0;\n\tmargin: 10px;\n}\n\n._1VqkOMx0TGIofprgKJHJB{\n\tdisplay: flex;\n\tmax-width: 800px;\n\tjustify-content: space-between;\n\talign-items: center;\n\tflex-wrap: wrap;\n\tmargin: 10px auto;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1{\n\tflex:1 1 230px;\n\tmargin:15px;\n\tflex-wrap: wrap;\n\tbackground: #FFF;\n\tborder-radius: 5px;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6{\n\t\n\tpadding: 20px;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6 > ._1ask7wLRZAKsa00ePhHGaV{\n\ttext-align: center;\n\tmargin-bottom: 10px;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6 > ._2_l1bEfpqxJrk-l1WadSjp {\n\ttext-align: center;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6 > ._2_l1bEfpqxJrk-l1WadSjp > h4{\n\tfont-family: sans-serif;\n\tfont-weight: bold;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6 > ._2_l1bEfpqxJrk-l1WadSjp > h5{\n\tfont-family: sans-serif;\n\tcolor:gray;\n\tfont-style: italic;\n\tfont-weight: bold;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > .derqqtWY-3IfuxVw_UBIp{\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-around;\n\tborder-top:1px solid lightgray;\n\tpadding: 5px;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > .derqqtWY-3IfuxVw_UBIp > .p0q6Q7u56WQhNdTf6OdXc{\n\tcolor:#000;\n}\n\n._5wDSLIjkmUipwGUq1Mmuc{\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 400px;\n\tbackground: #FFF;\n\tmargin: 50px auto;\n\tpadding: 15px;\n\tborder-radius: 5px;\n}\n\n._5wDSLIjkmUipwGUq1Mmuc > h4{\n\tfont-family: serif;\n\tpadding:10px;\n\tfont-style: italic;\n\tfont-weight: bold;\n}\n\n._1Lje36f-ZEH4wzsvkTWZx1{\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n}\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "::-moz-placeholder {\n\tcolor: #000;\n\tfont-family: serif;\n\tfont-style: italic;\n\n}\n\n:-ms-input-placeholder {\n\tcolor: #000;\n\tfont-family: serif;\n\tfont-style: italic;\n\n}\n\n::placeholder {\n\tcolor: #000;\n\tfont-family: serif;\n\tfont-style: italic;\n\n}\n\n.i4aYuJWumZtM1allQL1JY{\n}\n\n._1xcXL_fz7J8pPfccF2KjA7{\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-between;\n\talign-items: center;\n\tpadding: 5px 10px;\n\tbackground: rgba(220,220,220,0.9);\n\tbox-shadow: 3px 1px 4px 1px rgba(0,0,0, 0.8);\n}\n\n._1xcXL_fz7J8pPfccF2KjA7 > div > ._3Vyf2pBvtaGxRRZ-s1cHAV{\n\tletter-spacing: 3px;\n\tfont-family: serif;\n\tfont-size: 25px;\n}\n\n._1xcXL_fz7J8pPfccF2KjA7 > div > input{\n\tflex: 0 0 300px;\n\theight: 40px;\n\toutline: none;\n\tborder:none;\n\tbackground: rgba(169,169,169, 0.8);\n}\n\n._2Kxjw7YOow2GgQeWIce3wg{\n\tposition: absolute;\n\tright:0;\n\tmargin: 7px 10px;\n}\n\n._1VqkOMx0TGIofprgKJHJB{\n\tdisplay: flex;\n\tmax-width: 800px;\n\tjustify-content: space-between;\n\talign-items: center;\n\tflex-wrap: wrap;\n\tmargin: 10px auto;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1{\n\tflex:1 1 230px;\n\tmargin:15px;\n\tflex-wrap: wrap;\n\tbackground: #FFF;\n\tborder-radius: 5px;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6{\n\t\n\tpadding: 20px;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6 > ._1ask7wLRZAKsa00ePhHGaV{\n\ttext-align: center;\n\tmargin-bottom: 10px;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6 > ._2_l1bEfpqxJrk-l1WadSjp {\n\ttext-align: center;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6 > ._2_l1bEfpqxJrk-l1WadSjp > h4{\n\tfont-family: sans-serif;\n\tfont-weight: bold;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > ._1ocOFNS7y1tlPpkadcw6N6 > ._2_l1bEfpqxJrk-l1WadSjp > h5{\n\tfont-family: sans-serif;\n\tcolor:gray;\n\tfont-style: italic;\n\tfont-weight: bold;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > .derqqtWY-3IfuxVw_UBIp{\n\tdisplay: flex;\n\tflex:1;\n\tjustify-content: space-around;\n\tborder-top:1px solid lightgray;\n\tpadding: 5px;\n}\n\n._1VqkOMx0TGIofprgKJHJB > ._2B1z6lzcZf7v1WGSg3g6A1 > .derqqtWY-3IfuxVw_UBIp > .p0q6Q7u56WQhNdTf6OdXc{\n\tcolor:#000;\n}\n\n._5wDSLIjkmUipwGUq1Mmuc{\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 400px;\n\tbackground: #FFF;\n\tmargin: 50px auto;\n\tpadding: 15px;\n\tborder-radius: 5px;\n}\n\n._5wDSLIjkmUipwGUq1Mmuc > h4{\n\tfont-family: serif;\n\tpadding:10px;\n\tfont-style: italic;\n\tfont-weight: bold;\n}\n\n._1Lje36f-ZEH4wzsvkTWZx1{\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n}\n\n\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"list": "i4aYuJWumZtM1allQL1JY",
 	"title": "_1xcXL_fz7J8pPfccF2KjA7",
+	"title_text": "_3Vyf2pBvtaGxRRZ-s1cHAV",
 	"icon_search": "_2Kxjw7YOow2GgQeWIce3wg",
 	"users": "_1VqkOMx0TGIofprgKJHJB",
 	"user": "_2B1z6lzcZf7v1WGSg3g6A1",

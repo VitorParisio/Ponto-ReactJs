@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import style from './style.module.css';
+import { FaPlayCircle } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 
 
@@ -18,8 +19,12 @@ function AccountData(props) {
 	}
 	
 	return (
-		 <div className={style.container}>
-		 {console.log(accountData)}
+		<div className={style.account}>
+		 	<section className={style.title}>
+				<div>
+					<span className={style.title_text}><FaPlayCircle /> Colaborador</span>
+				</div>
+			</section> 
 	        <table className={style.table}>
 				<thead>
 					<tr>

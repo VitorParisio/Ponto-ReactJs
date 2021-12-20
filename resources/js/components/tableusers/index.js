@@ -6,7 +6,7 @@ import { FaSearch,
 		 FaTrashAlt, 
 		 FaUserCircle, 
 		 FaRegEdit,
-		 FaAngleRight } from 'react-icons/fa';
+		 FaPlayCircle } from 'react-icons/fa';
 import Pagination from "react-js-pagination";
 
 function TableUsers() {
@@ -84,9 +84,13 @@ function TableUsers() {
 		return (
 			<div className={style.list}>
 				<section className={style.title}>
-					<h3><FaAngleRight size={15}/> Colaboradores</h3>
-					<input type="text" placeholder="Colaborador(a)..." />
-					<span className={style.icon_search}><FaSearch /></span>				
+					<div>
+						<span className={style.title_text}><FaPlayCircle /> Colaboradores</span>
+					</div>
+					<div>
+						<input type="text" placeholder="Colaborador(a)..." />
+						<span className={style.icon_search}><FaSearch /></span>				
+					</div>
 				</section>  
 				{noUser === 0 ? no_user : user_data}
 				<section className={style.pagination}>

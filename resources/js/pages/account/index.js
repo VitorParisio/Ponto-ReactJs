@@ -14,7 +14,7 @@ function Account(props) {
 	
     return (
     	<div className={style.container}>
-	    	
+	    	<Header />
   			<SideBar />
          		<div className={style.body}>
     	        <Suspense fallback={<span>Aguarde...</span>}>

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Header from '../../components/header';
 import SideBar from '../../components/sidebar';
 import style from './style.module.css';
-import { FaRegCaretSquareRight, FaGrinAlt, FaAngleRight } from 'react-icons/fa';
+import { FaRegCaretSquareRight, FaGrinAlt, FaPlayCircle } from 'react-icons/fa';
 
 function Register() {
 	const [name, setName] 	           = useState("");
@@ -42,7 +42,7 @@ function Register() {
 			if (json.hasOwnProperty('errors')){
 				setError(json.errors);
 				setLoading(false);
-				
+
 				return error;
 			} else {
 				setLoading(false);
@@ -95,7 +95,7 @@ function Register() {
 	      					</div>
       					</div>}
       		<div className={style.title}>
-				<h3><FaAngleRight size={15}/> Adicionar</h3>				
+				<span className={style.title_text}><FaPlayCircle /> Adicionar</span>				
 			</div>  
        		<div className={style.form_register}>
        			<h5 className={style.title_register}>Definições</h5>

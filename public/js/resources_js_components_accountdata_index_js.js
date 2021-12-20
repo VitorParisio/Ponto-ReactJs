@@ -15,6 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _style_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.module.css */ "./resources/js/components/accountdata/style.module.css");
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -33,6 +34,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -79,8 +81,16 @@ function AccountData(props) {
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.container,
-    children: [console.log(accountData), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
+    className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.account,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
+      className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.title,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+          className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.title_text,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_4__.FaPlayCircle, {}), " Colaborador"]
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
       className: _style_module_css__WEBPACK_IMPORTED_MODULE_2__.default.table,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
@@ -128,8 +138,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "._3FIUn6vGV4ra5j4rNYxjK8{\r\n\r\n}\r\n\r\n._3FIUn6vGV4ra5j4rNYxjK8 > ._2UcuJEHbPNfyOKij6u8c2n {\r\n\tdisplay: flex;\r\n\tflex:1;\r\n\tjustify-content: space-between;\r\n\talign-items: center;\r\n\tpadding: 5px 10px;\r\n\tbackground: rgba(220,220,220,0.9);\r\n\tbox-shadow: 3px 1px 4px 1px rgba(0,0,0, 0.8);\r\n}\r\n\r\n._2UcuJEHbPNfyOKij6u8c2n > div > ._1HQHr3M1QL9E9j--ZBO5qG {\r\n\tletter-spacing: 3px;\r\n\tfont-family: serif;\r\n\tfont-size: 25px;\r\n}", ""]);
 // Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"account": "_3FIUn6vGV4ra5j4rNYxjK8",
+	"title": "_2UcuJEHbPNfyOKij6u8c2n",
+	"title_text": "_1HQHr3M1QL9E9j--ZBO5qG"
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
