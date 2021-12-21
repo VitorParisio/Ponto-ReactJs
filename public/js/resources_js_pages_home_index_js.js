@@ -66,7 +66,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* ----- RESET ---- */\n*{\n\tmargin:0;\n\tpadding: 0;\n\toutline: none;\n\tlist-style: none;\n\tbox-sizing: border-box;\n}\n/* ---------------- */\n\n._3tIlZoqn_lDn5haMDL4bkS{\n\twidth:100%;\n\theight:100vh;\n\tdisplay: flex;\n\tlist-style: none;\n}\n\n._2lF70zOOJpJzHBv_dYcBO6{\n\tflex:1;\n\theight: calc(100% - 60px);\n\twidth: calc(100% - 15%);\n\tbackground: rgba(220,220,220,0.4);\n\tposition: absolute;\n\tright: 0;\t\n\tbottom:0;\n}\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* ----- RESET ---- */\n*{\n\tmargin:0;\n\tpadding: 0;\n\toutline: none;\n\tlist-style: none;\n\tbox-sizing: border-box;\n}\n/* ---------------- */\n\n._3tIlZoqn_lDn5haMDL4bkS{\n\twidth:100%;\n\theight:100vh;\n\tdisplay: flex;\n\tlist-style: none;\n}\n\n._2lF70zOOJpJzHBv_dYcBO6{\n\tflex:1;\n\theight: calc(100% - 40px);\n\twidth: calc(100% - 15%);\n\tbackground: rgba(220,220,220,0.4);\n\tposition: absolute;\n\tright: 0;\t\n\tbottom:0;\n}\n\n\n\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": "_3tIlZoqn_lDn5haMDL4bkS",
